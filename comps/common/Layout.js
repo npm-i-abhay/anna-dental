@@ -1,28 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-// utils
-import { comp_theme } from '@/utils/variables'
-import { useTheme } from '@/utils/provider'
-
-// components 
-import { Navigation } from './Navigation'
+// components
+import { NavigationMob } from "./NavigationMob";
+import { Services } from "@/comps/Services/Services";
+import { Review } from "../ReviewCard/Review";
+import { FooterMeeting } from "../FooterMeeting/FooterMeeting";
 
 export const Layout = () => {
-    
-return (
+  return (
     <Wrapper>
-        <Navigation/>
-
+      <NavigationMob />
+      {/* <Services />
+      <Review /> */}
+      <FooterMeeting />
     </Wrapper>
-  )
-}
-
-
+  );
+};
 
 const Wrapper = styled.div`
-height:100%;
-width:100%;
-color:${({theme})=>theme.text};
-background:${({theme})=>theme.body};
-`
+  height: 100%;
+  width: 100%;
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.body};
+`;
