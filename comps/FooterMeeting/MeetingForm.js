@@ -18,6 +18,7 @@ export const MeetingForm = () => {
     daysArray: [],
     timesArray: [],
   });
+  const [meetingDisplay, setMeetingDisplay] = useState("none");
 
   const selectedDays = selected.daysArray;
   const selectedTimes = selected.timesArray;
@@ -55,17 +56,28 @@ export const MeetingForm = () => {
       });
     }
   };
+
+  const handleMeeting = (e) => {
+    if (e.target.checked) setMeetingDisplay("flex");
+    else setMeetingDisplay("none");
+  };
+
   return (
     <Container>
       <RequestContainer>
-        <Request type={"checkbox"} name="request" />
+        <Request
+          onChange={(e) => handleMeeting(e)}
+          type={"checkbox"}
+          name="request"
+        />
         <Label>Request a Meeting</Label>
       </RequestContainer>
 
-      <FlexRow>
+      <FlexRow display={meetingDisplay}>
         {days.map((day, i) => (
           <DayTimeCont onClick={() => handleDays(day)} key={i}>
             <Request
+              onChange={() => {}}
               checked={selectedDays.includes(day) ? true : false}
               value={day}
               type={"checkbox"}
@@ -76,10 +88,11 @@ export const MeetingForm = () => {
         ))}
       </FlexRow>
 
-      <FlexRow>
+      <FlexRow display={meetingDisplay}>
         {times.map((time, i) => (
           <DayTimeCont onClick={() => handleTimes(time)} key={i}>
             <Request
+              onChange={() => {}}
               checked={selectedTimes.includes(time) ? true : false}
               value={time}
               type={"checkbox"}
@@ -95,14 +108,20 @@ export const MeetingForm = () => {
 
 const Request = styled.input`
   // height: 20px;
+  accent-color: ${({ theme }) => theme.accent};
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 const Label = styled.label`
-  font-size: 16px;
+  font-size: 13px;
 `;
 
 const RequestContainer = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 const DayTimeCont = styled.div`
   display: flex;
@@ -111,9 +130,9 @@ const DayTimeCont = styled.div`
 `;
 const FlexRow = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background: red;
+  display: ${({ display }) => display};
+  justify-content: space-between;
+  padding: 1em;
 `;
 const RequestedDay = styled.input`
   // height: 20px;

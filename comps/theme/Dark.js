@@ -10,4 +10,6 @@ export const DarkTheme = {
   cardText: white,
   buttonBorder: darkBlue,
   reviewBg: white,
+  footerBg: darkBlue,
+  accent: turq,
 };
