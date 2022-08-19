@@ -13,6 +13,22 @@ const Wrapper = styled.div`
   padding: 0.5em;
   border-radius: ${({ radius }) => radius};
   padding: ${({ padding }) => padding};
+  position: ${({ position }) => position};
+  top: ${({ top }) => top};
+  backdrop-filter: ${({ filter }) => filter};
+  box-shadow: ${({ shadow }) => shadow};
+  margin: ${({ margin }) => margin};
+  z-index: ${({ zIndex }) => zIndex};
+  @media only screen and (max-width: 450px) {
+    display: ${({ mobDisplay }) => mobDisplay};
+    height: ${({ mobHeight }) => mobHeight};
+    width: ${({ mobWidth }) => mobWidth};
+    padding: ${({ mobPadding }) => mobPadding};
+    flex-flow: ${({ mobFlow }) => mobFlow};
+    margin: ${({ mobMargin }) => mobMargin};
+    flex-flow: ${({ mobDirection }) => mobDirection};
+    background-color: ${({ bgColMob }) => bgColMob};
+  }
 `;
 
 export const Container = ({
@@ -26,6 +42,20 @@ export const Container = ({
   radius = 0,
   padding,
   border,
+  mobDisplay,
+  mobHeight,
+  mobWidth,
+  mobPadding,
+  position,
+  top,
+  filter,
+  shadow,
+  mobFlow,
+  margin,
+  mobMargin,
+  zIndex,
+  mobDirection,
+  bgColMob,
 }) => {
   return (
     <Wrapper
@@ -38,6 +68,20 @@ export const Container = ({
       radius={radius}
       padding={padding}
       border={border}
+      mobDisplay={mobDisplay}
+      mobHeight={mobHeight}
+      mobWidth={mobWidth}
+      mobPadding={mobPadding}
+      position={position}
+      top={top}
+      filter={filter}
+      shadow={shadow}
+      mobFlow={mobFlow}
+      margin={margin}
+      mobMargin={mobMargin}
+      zIndex={zIndex}
+      mobDirection={mobDirection}
+      bgColMob={bgColMob}
     >
       {children}
     </Wrapper>

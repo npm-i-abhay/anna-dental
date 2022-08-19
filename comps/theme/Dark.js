@@ -1,10 +1,10 @@
 import { colors } from "./colors";
 
-const { black, white, darkBlue, turq } = colors;
+const { black, white, darkBlue, turq, transBlue, lilac } = colors;
 export const DarkTheme = {
-  text: colors.white,
+  text: white,
   body: "green",
-  hamMenu: colors.turq,
+  hamMenu: turq,
   serviceCard: white,
   headings: turq,
   cardText: white,
@@ -12,4 +12,7 @@ export const DarkTheme = {
   reviewBg: white,
   footerBg: darkBlue,
   accent: turq,
+  heroTxtCont: transBlue,
+  heroTxt: lilac,
+  heroHeadMob: darkBlue,
 };

@@ -25,6 +25,7 @@ export const Review = ({
   return (
     <Container
       width="30%"
+      mobWidth="50%"
       height="400px"
       bgCol={theme.reviewBg}
       padding=".5em"

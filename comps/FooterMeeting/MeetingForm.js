@@ -6,13 +6,7 @@ import { Container } from "../common/Container";
 
 export const MeetingForm = () => {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const times = [
-    "10:00 - 10:30 AM",
-    "12:00 - 12:30 PM",
-    "02:00 - 02:30 PM",
-    "04:00 - 04:30 PM",
-    "05:00 - 05:30 PM",
-  ];
+  const times = ["10:00 AM", "12:00 PM", "02:00 PM", "04:00 PM", "05:00 PM"];
 
   const [selected, setSelected] = useState({
     daysArray: [],
@@ -43,7 +37,6 @@ export const MeetingForm = () => {
   const handleTimes = (time) => {
     const addTime = selectedTimes.length < 3 && !selectedTimes.includes(time);
     const removeTime = selectedTimes.includes(time);
-    console.log(selected);
     if (addTime) {
       setSelected({ ...selected, timesArray: [...selectedTimes, time] });
     }
@@ -125,14 +118,18 @@ const RequestContainer = styled.div`
 `;
 const DayTimeCont = styled.div`
   display: flex;
+  width: 15%;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  @media only screen and (max-width: 450px) {
+    width: 20%;
+  }
 `;
 const FlexRow = styled.div`
   width: 100%;
   display: ${({ display }) => display};
   justify-content: space-between;
-  padding: 1em;
+  padding: 1em 0 1em 0;
 `;
 const RequestedDay = styled.input`
   // height: 20px;

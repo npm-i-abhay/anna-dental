@@ -5,34 +5,15 @@ import { siteServices } from "../propsData";
 
 // components
 import { Navigation } from "./navigation/Navigation";
-import { Services } from "@/comps/Services/Services";
-import { Review } from "../ReviewCard/Review";
-import { ReviewCarousel } from "../ReviewCard/ReviewCarousel";
+
 import { FooterMeeting } from "../FooterMeeting/FooterMeeting";
-import { HomeBanner } from "../HeroBanners/HomeBanner";
-import { SubBanner } from "../SubBanner/SubBanner";
 import { Heading } from "./Heading";
 
-export const Layout = () => {
+export const ServiceLayout = ({ children }) => {
   return (
     <Wrapper>
       <Navigation />
-      <HomeBanner />
-      <SubBanner />
-      <Heading heading={"What We Offer"} />
-      <ServicesContainer>
-        {siteServices.map((service, index) => (
-          <Services
-            imgSrc={service.imgSrc}
-            serviceName={service.serviceName}
-            serviceExcerpt={service.serviceExcerpt}
-          />
-        ))}
-      </ServicesContainer>
-
-      <Heading heading={"What Our Customers Say About Us"} />
-
-      <ReviewCarousel />
+      {children}
       <FooterMeeting />
     </Wrapper>
   );

@@ -41,7 +41,7 @@ export const ContactForm = () => {
         <FormRow>
           <InputContainer>
             <InputLabel> First Name </InputLabel>
-            <NameInput
+            <FieldInput
               onChange={(e) => UpdateFormField(e, "first")}
               value={formFields.first}
               name="First Name"
@@ -50,7 +50,7 @@ export const ContactForm = () => {
 
           <InputContainer>
             <InputLabel> Last Name </InputLabel>
-            <NameInput
+            <FieldInput
               onChange={(e) => UpdateFormField(e, "last")}
               value={formFields.last}
               name="Last Name"
@@ -61,14 +61,14 @@ export const ContactForm = () => {
         <FormRow>
           <InputContainer>
             <InputLabel>Email</InputLabel>
-            <EmailInput
+            <FieldInput
               onChange={(e) => UpdateFormField(e, "email")}
               value={formFields.email}
             />
           </InputContainer>
           <InputContainer>
             <InputLabel>Phone (optional)</InputLabel>
-            <PhoneInput
+            <FieldInput
               onChange={(e) => UpdateFormField(e, "phone")}
               value={formFields.phone}
             />
@@ -84,47 +84,48 @@ export const ContactForm = () => {
   );
 };
 
-const NameInput = styled.input`
+const FieldInput = styled.input`
   color: black;
-  background: none;
+  background: lightgrey;
   border: none;
-  border-bottom: 2px solid black;
-`;
-
-const EmailInput = styled.input`
-  color: black;
-  background: none;
-  border: none;
-  border-bottom: 2px solid black;
-`;
-
-const PhoneInput = styled.input`
-  color: black;
-  background: none;
-  border: none;
-  border-bottom: 2px solid black;
+  width: 100%;
+  @media only screen and (max-width: 450px) {
+    // width: 60%;
+  }
 `;
 
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 2.5em;
+  @media only screen and (max-width: 450px) {
+    width: 40%;
+  }
 `;
 
 const MessageInput = styled.textarea`
   min-width: 80%;
-  max-width: 80%;
+  max-width: 100%;
   min-height: 200px;
   max-height: 100%;
-  background: none;
+  background: lightgrey;
+  border: none;
   color: black;
+  @media only screen and (max-width: 450px) {
+    max-width: 100%;
+  }
 `;
 
 const FormRow = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0.5em;
-  width: 80%;
+  margin: 0.5em 0 0.5em 0;
+  width: 100%;
   // border: 2px solid green;
+  @media only screen and (max-width: 450px) {
+    width: 100%;
+  }
 `;
 
 const FormContainer = styled.div`

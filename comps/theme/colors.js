@@ -6,4 +6,5 @@ export const colors = {
   darkBlue: "#024873",
   lilac: "#F5E8FA",
   grey: "#D9D9D9",
+  transBlue: "rgba(2, 72, 115, 0.77)",
 };
