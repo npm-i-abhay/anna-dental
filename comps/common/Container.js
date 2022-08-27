@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     margin: ${({ mobMargin }) => mobMargin};
     flex-flow: ${({ mobDirection }) => mobDirection};
     background-color: ${({ bgColMob }) => bgColMob};
+    border-radius: ${({ mobRadius }) => mobRadius};
   }
 `;
 
@@ -56,6 +57,7 @@ export const Container = ({
   zIndex,
   mobDirection,
   bgColMob,
+  mobRadius,
 }) => {
   return (
     <Wrapper
@@ -82,6 +84,7 @@ export const Container = ({
       zIndex={zIndex}
       mobDirection={mobDirection}
       bgColMob={bgColMob}
+      mobRadius={mobRadius}
     >
       {children}
     </Wrapper>

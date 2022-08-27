@@ -20,6 +20,7 @@ export const Layout = () => {
       <HomeBanner />
       <SubBanner />
       <Heading heading={"What We Offer"} />
+
       <ServicesContainer>
         {siteServices.map((service, index) => (
           <Services

@@ -10,7 +10,7 @@ import { Container } from "../Container";
 export const Navigation = () => {
   const { theme } = useTheme();
   const { menuDisplay, setMenuDisplay } = useMenu();
-
+  const [serviceDropDown, setServiceDropDown] = useState(0);
   const handleMenu = () => {
     menuDisplay === "none" ? setMenuDisplay("flex") : setMenuDisplay("none");
   };
@@ -85,7 +85,30 @@ export const Navigation = () => {
             </Link>
 
             <Link href={""} passHref>
-              <MenuLink>Services</MenuLink>
+              <MenuLink
+                onMouseEnter={() => setServiceDropDown(300)}
+                onMouseLeave={() => setServiceDropDown(0)}
+              >
+                Services
+                <ServicesContainer disp={serviceDropDown}>
+                  {serviceDropDown > 0 && (
+                    <>
+                      <Link href={"/service/solea"} passHref>
+                        <MenuLink>Solea</MenuLink>
+                      </Link>
+                      <Link href={"/service/cerec"} passHref>
+                        <MenuLink> Cerec </MenuLink>
+                      </Link>
+                      <Link href={"/service/new-office"} passHref>
+                        <MenuLink> New Office </MenuLink>
+                      </Link>
+                      <Link href={"/service/sundries"} passHref>
+                        <MenuLink> Sundries</MenuLink>
+                      </Link>
+                    </>
+                  )}
+                </ServicesContainer>
+              </MenuLink>
             </Link>
 
             <Link href={""} passHref>
@@ -107,6 +130,9 @@ const MobContainer = styled.div`
   align-items: flex-end;
   position: sticky;
   top: 0px;
+  // background: green;
+  width: 100%;
+  z-index: 9999;
 `;
 const HamContainer = styled.div`
   padding: 0.4em;
@@ -138,13 +164,15 @@ const Menu = styled.div`
   flex-flow: column;
   justify-content: space-evenly;
   font-size: 2em;
-  width: 80%;
+  width: 100%;
   height: 70vh;
   align-items: flex-end;
   display: ${(props) => props.display}};
   position: absolute;
   top: 50px;
-  background:red;
+  right:0px;
+  // background: ${({ theme }) => theme.heroTxtCont};
+  backdrop-filter:blur(5px);
 `;
 const MenuLink = styled.a`
   padding: 0.25em;
@@ -152,6 +180,7 @@ const MenuLink = styled.a`
   justify-content: flex-end;
   // width: 100%;
   text-align: right;
+  position: relative;
 `;
 
 const DesktopLinkContainer = styled.div`
@@ -176,4 +205,18 @@ export const LogoImg = styled.img`
   height: 100%;
   width: 100%;
   border-radius: 80px;
+`;
+
+const ServicesContainer = styled.div`
+  height: ${({ disp }) => disp}px;
+  width: 150px;
+  position: absolute;
+  top: 30px;
+  // display: ${({ disp }) => disp};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: ${({ theme }) => theme.serviceCard};
+  color: white;
+  transition: all 0.5s;
 `;
