@@ -18,7 +18,12 @@ const Wrapper = styled.div`
   backdrop-filter: ${({ filter }) => filter};
   box-shadow: ${({ shadow }) => shadow};
   margin: ${({ margin }) => margin};
+  margin-left: ${({ marginL }) => marginL};
+  margin-right: ${({ marginR }) => marginR};
   z-index: ${({ zIndex }) => zIndex};
+  left: ${({ left }) => left};
+  opacity: ${({ opacity }) => opacity};
+  transition: all 0.5s;
   @media only screen and (max-width: 450px) {
     display: ${({ mobDisplay }) => mobDisplay};
     height: ${({ mobHeight }) => mobHeight};
@@ -58,6 +63,11 @@ export const Container = ({
   mobDirection,
   bgColMob,
   mobRadius,
+  left,
+  opacity,
+  marginL,
+  marginR,
+  onClick,
 }) => {
   return (
     <Wrapper
@@ -85,6 +95,11 @@ export const Container = ({
       mobDirection={mobDirection}
       bgColMob={bgColMob}
       mobRadius={mobRadius}
+      left={left}
+      opacity={opacity}
+      marginL={marginL}
+      marginR={marginR}
+      onClick={onClick}
     >
       {children}
     </Wrapper>

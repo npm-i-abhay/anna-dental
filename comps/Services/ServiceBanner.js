@@ -77,7 +77,9 @@ const ProductName = styled.h1`
   text-align: left;
   margin-top: 2em;
   color: ${({ theme }) => theme.heroHeadMob};
-
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+  }
   //   background: yellow;
 `;
 

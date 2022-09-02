@@ -14,6 +14,7 @@ export const LightTheme = {
   footerBg: darkBlue,
   accent: turq,
   heroTxtCont: transBlue,
-  heroTxt: lilac,
   heroHeadMob: darkBlue,
+  heroTxt: lilac,
+  // lilacAccent: lilac,
 };

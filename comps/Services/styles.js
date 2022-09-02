@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 export const ProductName = styled.h1`
   font-size: ${({ fontSize }) => fontSize};
   text-align: center;
@@ -149,13 +149,14 @@ export const ServiceExcerpt = styled.p`
   }
 `;
 
-export const LearnButton = styled.div`
+export const LearnButton = styled(motion.div)`
   color: ${({ theme }) => theme.cardText};
-  width: 70%;
-  height: 30px;
+  width: 50%;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   border: 2px solid ${({ theme }) => theme.accent};
   text-align: center;
   border-radius: 3px;

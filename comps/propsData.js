@@ -53,4 +53,40 @@ export const siteReviews = [
     location: "Vancouver Dental",
     body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
   },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
+  {
+    imgSrc: "/services/serviceSolea.png",
+    name: "Solea",
+    location: "Vancouver Dental",
+    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
+  },
 ];

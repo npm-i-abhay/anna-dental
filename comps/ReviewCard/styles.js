@@ -11,7 +11,7 @@ export const ReviewHeader = styled.div`
 `;
 
 export const Avatar = styled.div`
-  height: 120px;
+  height: 100px;
   width: 120px;
   border-radius: 80px;
   background: grey;

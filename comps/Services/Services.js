@@ -25,9 +25,9 @@ export const Services = ({
   return (
     <Container
       radius="3px"
-      width="20%"
-      height="auto"
-      mobWidth={"40%"}
+      width="100%"
+      height="100%"
+      mobWidth={"100%"}
       padding={0}
       justify="space-between"
       bgCol={theme.serviceCard}
@@ -38,7 +38,7 @@ export const Services = ({
       <TextContainer>
         <ServiceName>{serviceName}</ServiceName>
         <ServiceExcerpt>{serviceExcerpt}</ServiceExcerpt>
-        <LearnButton>Learn More</LearnButton>
+        <LearnButton whileHover={{ scale: 1.1 }}>Learn More</LearnButton>
       </TextContainer>
     </Container>
   );

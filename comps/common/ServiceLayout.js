@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { siteServices } from "../propsData";
 
 // components
-import { Navigation } from "./navigation/Navigation";
+import { NavBar } from "./navigation/NavBar";
 
 import { FooterMeeting } from "../FooterMeeting/FooterMeeting";
 import { Heading } from "./Heading";
@@ -12,7 +12,7 @@ import { Heading } from "./Heading";
 export const ServiceLayout = ({ children }) => {
   return (
     <Wrapper>
-      <Navigation />
+      <NavBar />
       {children}
       <FooterMeeting />
     </Wrapper>
