@@ -11,12 +11,11 @@ import { ServicesIcons } from "@/comps/Services/ServicesIcons";
 // data imports
 import { servicesData } from "@/comps/Services/data";
 
-export default function service() {
+export default function Service() {
   const { query } = useRouter();
 
   const { solea, cerec, newOffice, sundries } = servicesData;
   const [pageTypeProp, setPageTypeProp] = useState(solea);
-  console.log("query.service", query.service);
   useEffect(() => {
     switch (query.service) {
       case "solea":

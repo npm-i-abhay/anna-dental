@@ -5,7 +5,7 @@ export const ReviewHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
 `;
@@ -15,7 +15,7 @@ export const Avatar = styled.div`
   width: 120px;
   border-radius: 80px;
   background: grey;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     height: 80px;
     width: 80px;
   }
@@ -27,7 +27,7 @@ export const Info = styled.div`
 `;
 export const Reviewer = styled.h4`
   text-align: right;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     text-align: center;
     font-size: 16px;
     margin: 0.2em;
@@ -36,7 +36,7 @@ export const Reviewer = styled.h4`
 export const ReviewBody = styled.p`
   font-size: 14px;
   width: 80%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     font-size: 12px;
     text-align: center;

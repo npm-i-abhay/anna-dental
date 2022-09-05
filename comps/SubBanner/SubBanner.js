@@ -50,7 +50,7 @@ export const HeroHeading = styled.h1`
   line-height: 1.5em;
   text-align: left;
   margin: 1em;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     font-size: 28px;
     color: ${({ theme }) => theme.heroTxt};
   }
@@ -58,7 +58,7 @@ export const HeroHeading = styled.h1`
 export const HeroCopy = styled.p`
   color: ${({ theme }) => theme.accent};
   width: 60%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     text-align: center;
     width: 100%;
     height: 100%;

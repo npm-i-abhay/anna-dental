@@ -32,7 +32,7 @@ const FooterInfo = styled.div`
   height: 600px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.footerBg};
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     display: none;
   }
 `;

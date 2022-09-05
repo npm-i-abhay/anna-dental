@@ -121,7 +121,7 @@ const DayTimeCont = styled.div`
   width: 15%;
   flex-direction: column;
   align-items: flex-start;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 20%;
   }
 `;

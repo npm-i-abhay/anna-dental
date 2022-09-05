@@ -89,7 +89,7 @@ const FieldInput = styled.input`
   background: lightgrey;
   border: none;
   width: 100%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     // width: 60%;
   }
 `;
@@ -99,7 +99,7 @@ const InputContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 2.5em;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 40%;
   }
 `;
@@ -112,7 +112,7 @@ const MessageInput = styled.textarea`
   background: lightgrey;
   border: none;
   color: black;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     max-width: 100%;
   }
 `;
@@ -123,7 +123,7 @@ const FormRow = styled.div`
   margin: 0.5em 0 0.5em 0;
   width: 100%;
   // border: 2px solid green;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
   }
 `;
