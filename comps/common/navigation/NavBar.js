@@ -11,11 +11,20 @@ import { motion, useCycle } from "framer-motion";
 export const NavBar = () => {
   const theme = useTheme();
   const { menuDisplay, setMenuDisplay } = useMenu();
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [isServices, toggleOpen] = useCycle(false, true);
+  const [isOpen, setIsOpen] = useState(false);
   const [serviceDropDown, setServiceDropDown] = useState(0);
+  const [mobServiceDisp, setMobServiceDisp] = useState("none");
   const handleMenu = () => {
-    menuDisplay === "none" ? setMenuDisplay("flex") : setMenuDisplay("none");
+    isOpen === false ? setIsOpen(true) : setIsOpen(false);
   };
+  const handleMobileServices = () => {
+    // console.log("mobServiceDisp", mobServiceDisp);
+    // mobServiceDisp === "none"
+    //   ? setMobServiceDisp("flex")
+    //   : setMobServiceDisp("none");
+  };
+
   const [sWidth, setSwidth] = useState();
 
   useEffect(() => {
@@ -41,13 +50,13 @@ export const NavBar = () => {
         type: "spring",
         stiffness: 20,
         restDelta: 1,
-        clipPath: { duration: 1 },
+        clipPath: { duration: 0.5 },
       },
     }),
     closed: {
       clipPath: "circle(30px at 40px 10px)",
       transition: {
-        clipPath: { duration: 1 },
+        clipPath: { duration: 0.5 },
         // delay: 0.5,
         type: "spring",
         stiffness: 400,
@@ -83,6 +92,52 @@ export const NavBar = () => {
     },
   };
 
+  const childrenVariants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  };
+
+  const linkVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
+
+  const servicesVariants = {
+    open: {
+      height: 200,
+      opacity: 1,
+      y: 50,
+      x: -150,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      height: 0,
+      y: 50,
+      x: -150,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  };
   return (
     <>
       {sWidth < 600 ? (
@@ -90,34 +145,77 @@ export const NavBar = () => {
           <HamContainer
             initial={false}
             animate={isOpen ? "open" : "closed"}
-            // onClick={handleMenu}
-            onClick={() => toggleOpen()}
+            // onClick={() => toggleOpen()}
           >
             <Background variants={sidebar}>
-              <HamBarContainer>
+              <HamBarContainer onClick={() => handleMenu()}>
                 <Bar1 />
                 <Bar2 />
                 <Bar3 />
               </HamBarContainer>
               <Menu
                 display={menuDisplay}
+                variants={childrenVariants}
                 // animate={isOpen ? { backgroundColor: "white" } : "white"}
               >
-                <Link href={"/"} passHref>
+                <LinkContainer variants={linkVariants}>
                   <MenuLink>Home</MenuLink>
-                </Link>
+                </LinkContainer>
 
-                <Link href={""} passHref>
+                <LinkContainer variants={linkVariants}>
                   <MenuLink>Contact</MenuLink>
-                </Link>
+                </LinkContainer>
 
-                <Link href={""} passHref>
-                  <MenuLink>Services</MenuLink>
-                </Link>
+                <LinkContainer variants={linkVariants}>
+                  <MenuLink
+                    variants={childrenVariants}
+                    onClick={() => toggleOpen()}
+                  >
+                    Services +
+                    <MobServicesContainer
+                      variants={servicesVariants}
+                      initial={false}
+                      animate={isServices ? "open" : "closed"}
+                    >
+                      {/* {serviceDropDown > 0 && ( */}
+                      <>
+                        <LinkContainer
+                          variants={linkVariants}
+                          href={"/service/solea"}
+                          passHref
+                        >
+                          <MenuLink>Solea</MenuLink>
+                        </LinkContainer>
+                        <LinkContainer
+                          variants={linkVariants}
+                          href={"/service/cerec"}
+                          passHref
+                        >
+                          <MenuLink> Cerec </MenuLink>
+                        </LinkContainer>
+                        <LinkContainer
+                          variants={linkVariants}
+                          href={"/service/new-office"}
+                          passHref
+                        >
+                          <MenuLink> New Office </MenuLink>
+                        </LinkContainer>
+                        <LinkContainer
+                          variants={linkVariants}
+                          href={"/service/sundries"}
+                          passHref
+                        >
+                          <MenuLink> Sundries</MenuLink>
+                        </LinkContainer>
+                      </>
+                      {/* )} */}
+                    </MobServicesContainer>
+                  </MenuLink>
+                </LinkContainer>
 
-                <Link href={""} passHref>
+                <LinkContainer variants={linkVariants}>
                   <MenuLink>Request Meeting</MenuLink>
-                </Link>
+                </LinkContainer>
               </Menu>
             </Background>
           </HamContainer>
@@ -325,6 +423,17 @@ const ServicesContainer = styled(motion.div)`
   transition: all 0.5s;
   right: 0px;
 `;
+const MobServicesContainer = styled(motion.div)`
+  height: 200px;
+  width: 180px;
+  color: white;
+  transition: all 0.5s;
+  font-size: 18px;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 const Background = styled(motion.div)`
   position: absolute;
@@ -332,7 +441,7 @@ const Background = styled(motion.div)`
   left: 0px;
   bottom: 0;
   width: 100%;
-  // background: red;
+  background: red;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -349,4 +458,8 @@ const HamBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const LinkContainer = styled(motion.div)`
+  color: white;
 `;
