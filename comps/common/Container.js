@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   left: ${({ left }) => left};
   opacity: ${({ opacity }) => opacity};
   transition: all 0.5s;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     display: ${({ mobDisplay }) => mobDisplay};
     height: ${({ mobHeight }) => mobHeight};
     width: ${({ mobWidth }) => mobWidth};

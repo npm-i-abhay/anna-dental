@@ -25,7 +25,7 @@ export const ProductImage = styled.img`
   object-fit: contain;
   height: 40%;
   width: 40%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     height: 120%;
     width: 120%;
     position: absolute;
@@ -46,7 +46,7 @@ export const LogoImg = styled.img`
   object-fit: cover;
   height: 50%;
   width: 50%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     height: 100%;
     width: 100%;
   }
@@ -59,7 +59,7 @@ export const Icon = styled.div`
   justify-content: center;
   //   border-radius: 80px;
   // background: pink;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     height: 50%;
     width: 50%;
   }
@@ -68,7 +68,7 @@ export const IconImg = styled.img`
   object-fit: cover;
   height: 60%;
   width: 60%;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     height: 100%;
     width: 100%;
   }
@@ -83,7 +83,7 @@ export const IconCopy = styled.span`
   align-items: flex-start;
   text-align: center;
   justify-content: center;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -99,7 +99,7 @@ export const HeroCopy = styled.p`
   color: ${({ color }) => color};
   width: 70%;
   font-size: 25px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     text-align: center;
     color: ${({ color }) => color};
@@ -143,7 +143,7 @@ export const ServiceExcerpt = styled.p`
   text-align: center;
   // padding: 0.5em;
   font-size: 14px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     font-size: 12px;
   }
@@ -160,7 +160,7 @@ export const LearnButton = styled(motion.div)`
   border: 2px solid ${({ theme }) => theme.accent};
   text-align: center;
   border-radius: 3px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 600px) {
     width: 100%;
     font-size: 12px;
   }
