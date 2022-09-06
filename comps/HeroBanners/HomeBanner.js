@@ -70,7 +70,6 @@ export const HeroImage = styled.img`
 
 export const HeroTextCont = styled.div`
   width: 60%;
-  height: 60%;
   position: absolute;
   background: ${({ theme }) => theme.heroTxtCont};
   bottom: -10%;
@@ -78,7 +77,7 @@ export const HeroTextCont = styled.div`
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   padding: 0.5em;
   margin: 1.5em 0 1.5em 0;
 `;

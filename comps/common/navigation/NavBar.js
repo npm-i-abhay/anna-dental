@@ -55,7 +55,9 @@ export const NavBar = () => {
       },
     }),
     closed: {
-      clipPath: "circle(30px at 40px 10px)",
+      clipPath: "circle(25px at 35px 5px)",
+      justifyContent: "flex-start",
+      alignItems: "center",
       transition: {
         clipPath: { duration: 0.5 },
         // delay: 0.5,
@@ -164,7 +166,9 @@ export const NavBar = () => {
                 </LinkContainer>
 
                 <LinkContainer variants={linkVariants}>
-                  <MenuLink>Contact</MenuLink>
+                  <MenuLink onClick={() => handleMenu()} href="#contact">
+                    Contact
+                  </MenuLink>
                 </LinkContainer>
 
                 <LinkContainer variants={linkVariants}>
@@ -241,8 +245,9 @@ export const NavBar = () => {
               </MenuLink>
             </Link>
 
-            <Link href={""} passHref>
+            <div>
               <MenuLink
+                href="#contact"
                 initial={"rest"}
                 variants={LinkHover}
                 animate={"rest"}
@@ -250,7 +255,7 @@ export const NavBar = () => {
               >
                 Contact
               </MenuLink>
-            </Link>
+            </div>
 
             <Link
               href={"/"}
@@ -331,20 +336,20 @@ const HamContainer = styled(motion.div)`
   // width: 100%;
 `;
 const Bar1 = styled.div`
-  height: 6px;
-  width: 38px;
+  height: 3px;
+  width: 30px;
   margin-bottom: 0.2em;
   background-color: ${({ theme }) => theme.hamMenu};
 `;
 const Bar2 = styled.div`
-  height: 6px;
-  width: 28px;
+  height: 3px;
+  width: 20px;
   margin-bottom: 0.2em;
   background-color: ${({ theme }) => theme.hamMenu};
 `;
 const Bar3 = styled.div`
-  height: 6px;
-  width: 38px;
+  height: 3px;
+  width: 30px;
   margin-bottom: 0.2em;
   background-color: ${({ theme }) => theme.hamMenu};
 `;

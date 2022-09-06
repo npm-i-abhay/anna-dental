@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 // component imports
 import { Container } from "../common/Container";
 
@@ -19,9 +19,10 @@ export const Services = ({
   imgSrc = "http://placekitten.com/200/300",
   serviceName,
   serviceExcerpt = "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  serviceLink,
 }) => {
   const theme = useTheme();
-
+  const r = useRouter();
   return (
     <Container
       radius="3px"
@@ -38,7 +39,12 @@ export const Services = ({
       <TextContainer>
         <ServiceName>{serviceName}</ServiceName>
         <ServiceExcerpt>{serviceExcerpt}</ServiceExcerpt>
-        <LearnButton whileHover={{ scale: 1.1 }}>Learn More</LearnButton>
+        <LearnButton
+          onClick={() => r.push(`/${serviceLink}`)}
+          whileHover={{ scale: 1.1 }}
+        >
+          Learn More
+        </LearnButton>
       </TextContainer>
     </Container>
   );

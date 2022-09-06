@@ -60,6 +60,7 @@ export const Layout = () => {
                   imgSrc={service.imgSrc}
                   serviceName={service.serviceName}
                   serviceExcerpt={service.serviceExcerpt}
+                  serviceLink={service.serviceLink}
                 />
               </SwiperSlide>
             );
