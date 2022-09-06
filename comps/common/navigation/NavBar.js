@@ -55,7 +55,7 @@ export const NavBar = () => {
       },
     }),
     closed: {
-      clipPath: "circle(25px at 35px 5px)",
+      clipPath: "circle(25px at 35px )",
       justifyContent: "flex-start",
       alignItems: "center",
       transition: {
@@ -207,8 +207,11 @@ export const NavBar = () => {
                   </MenuLink>
                 </LinkContainer>
 
-                <LinkContainer variants={linkVariants}>
-                  <MenuLink>Request Meeting</MenuLink>
+                <LinkContainer
+                  onClick={() => handleMenu()}
+                  variants={linkVariants}
+                >
+                  {/* <MenuLink href="#reviews">Reviews</MenuLink> */}
                 </LinkContainer>
               </Menu>
             </Background>
@@ -294,16 +297,17 @@ export const NavBar = () => {
               </MenuLink>
             </Link>
 
-            <Link href={""} passHref>
+            {/* <div>
               <MenuLink
                 initial={"rest"}
                 variants={LinkHover}
                 animate={"rest"}
                 whileHover={"hover"}
+                href="#reviews"
               >
-                Request Meeting
+                Reviews
               </MenuLink>
-            </Link>
+            </div> */}
           </DesktopLinkContainer>
         </Container>
       )}

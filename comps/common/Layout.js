@@ -67,7 +67,6 @@ export const Layout = () => {
           })}
         </Swiper>
       </ServicesContainer>
-
       <Heading heading={"What Our Customers Say About Us"} />
       <ServicesContainer>
         <Swiper
