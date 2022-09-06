@@ -44,6 +44,7 @@ export const NavBar = () => {
     open: (height = 1000) => ({
       clipPath: `circle(1000px at 40px 30px)`,
       justifyContent: "flex-start",
+      width: "100%",
       alignItems: "center",
       backgroundColor: "white",
       transition: {
@@ -159,7 +160,7 @@ export const NavBar = () => {
                 // animate={isOpen ? { backgroundColor: "white" } : "white"}
               >
                 <LinkContainer variants={linkVariants}>
-                  <MenuLink>Home</MenuLink>
+                  <MenuLink href="/">Home</MenuLink>
                 </LinkContainer>
 
                 <LinkContainer variants={linkVariants}>
@@ -179,33 +180,22 @@ export const NavBar = () => {
                     >
                       {/* {serviceDropDown > 0 && ( */}
                       <>
-                        <LinkContainer
-                          variants={linkVariants}
-                          href={"/service/solea"}
-                          passHref
-                        >
-                          <MenuLink>Solea</MenuLink>
+                        <LinkContainer variants={linkVariants} passHref>
+                          <MenuLink href={"/service/solea"}>Solea</MenuLink>
                         </LinkContainer>
-                        <LinkContainer
-                          variants={linkVariants}
-                          href={"/service/cerec"}
-                          passHref
-                        >
-                          <MenuLink> Cerec </MenuLink>
+                        <LinkContainer variants={linkVariants} passHref>
+                          <MenuLink href={"/service/cerec"}> Cerec </MenuLink>
                         </LinkContainer>
-                        <LinkContainer
-                          variants={linkVariants}
-                          href={"/service/new-office"}
-                          passHref
-                        >
-                          <MenuLink> New Office </MenuLink>
+                        <LinkContainer variants={linkVariants} passHref>
+                          <MenuLink href={"/service/new-office"}>
+                            New Office{" "}
+                          </MenuLink>
                         </LinkContainer>
-                        <LinkContainer
-                          variants={linkVariants}
-                          href={"/service/sundries"}
-                          passHref
-                        >
-                          <MenuLink> Sundries</MenuLink>
+                        <LinkContainer variants={linkVariants} passHref>
+                          <MenuLink href={"/service/sundries"}>
+                            {" "}
+                            Sundries
+                          </MenuLink>
                         </LinkContainer>
                       </>
                       {/* )} */}
@@ -389,6 +379,8 @@ const DesktopLinkContainer = styled(motion.div)`
   width: 60%;
   display: flex;
   justify-content: space-around;
+  color: black;
+  // background: green;
 `;
 const DesktopLogoContainer = styled.div`
   width: 40%;
@@ -425,14 +417,15 @@ const ServicesContainer = styled(motion.div)`
 `;
 const MobServicesContainer = styled(motion.div)`
   height: 200px;
-  width: 180px;
+  width: 150px;
   color: white;
   transition: all 0.5s;
   font-size: 18px;
-  background: red;
+  background: ${({ theme }) => theme.hamMenu};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
 `;
 
 const Background = styled(motion.div)`

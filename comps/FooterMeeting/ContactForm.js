@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, forwardRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 
 // COMPONENT IMPORT
 import { Container } from "../common/Container";
-export const ContactForm = () => {
+import { MeetingForm } from "./MeetingForm";
+export const ContactForm = ({ form, sendEmail }) => {
   const [formFields, setFormFields] = useState({
     first: "",
     last: "",
@@ -16,7 +18,6 @@ export const ContactForm = () => {
     switch (field) {
       case "first":
         setFormFields({ ...formFields, first: e.target.value });
-        console.log(formFields);
         break;
       case "last":
         setFormFields({ ...formFields, last: e.target.value });
@@ -38,47 +39,54 @@ export const ContactForm = () => {
   return (
     <Container align="flex-start">
       <FormContainer>
-        <FormRow>
-          <InputContainer>
-            <InputLabel> First Name </InputLabel>
-            <FieldInput
-              onChange={(e) => UpdateFormField(e, "first")}
-              value={formFields.first}
-              name="First Name"
-            />
-          </InputContainer>
+        <StyledForm ref={form} onSubmit={sendEmail}>
+          <FormRow>
+            <InputContainer>
+              <InputLabel> First Name </InputLabel>
+              <FieldInput
+                onChange={(e) => UpdateFormField(e, "first")}
+                value={formFields.first}
+                name="first_name"
+              />
+            </InputContainer>
 
-          <InputContainer>
-            <InputLabel> Last Name </InputLabel>
-            <FieldInput
-              onChange={(e) => UpdateFormField(e, "last")}
-              value={formFields.last}
-              name="Last Name"
-            />
-          </InputContainer>
-        </FormRow>
+            <InputContainer>
+              <InputLabel> Last Name </InputLabel>
+              <FieldInput
+                onChange={(e) => UpdateFormField(e, "last")}
+                value={formFields.last}
+                name="last_name"
+              />
+            </InputContainer>
+          </FormRow>
 
-        <FormRow>
-          <InputContainer>
-            <InputLabel>Email</InputLabel>
-            <FieldInput
-              onChange={(e) => UpdateFormField(e, "email")}
-              value={formFields.email}
-            />
-          </InputContainer>
-          <InputContainer>
-            <InputLabel>Phone (optional)</InputLabel>
-            <FieldInput
-              onChange={(e) => UpdateFormField(e, "phone")}
-              value={formFields.phone}
-            />
-          </InputContainer>
-        </FormRow>
-        <MessageInput
-          onChange={(e) => UpdateFormField(e, "message")}
-          value={formFields.message}
-          placeholder="Your Request/Enquiry"
-        />
+          <FormRow>
+            <InputContainer>
+              <InputLabel>Email</InputLabel>
+              <FieldInput
+                onChange={(e) => UpdateFormField(e, "email")}
+                value={formFields.email}
+                name="email"
+              />
+            </InputContainer>
+            <InputContainer>
+              <InputLabel>Phone (optional)</InputLabel>
+              <FieldInput
+                onChange={(e) => UpdateFormField(e, "phone")}
+                value={formFields.phone}
+                name="phone"
+              />
+            </InputContainer>
+          </FormRow>
+          <MessageInput
+            onChange={(e) => UpdateFormField(e, "message")}
+            value={formFields.message}
+            placeholder="Your Request/Enquiry"
+            name="message"
+          />
+          <MeetingForm />
+          <input type="submit" value="Send" />
+        </StyledForm>
       </FormContainer>
     </Container>
   );
@@ -88,9 +96,11 @@ const FieldInput = styled.input`
   color: black;
   background: lightgrey;
   border: none;
-  width: 100%;
+  width: 300px;
+  height: 30px;
   @media only screen and (max-width: 600px) {
-    // width: 60%;
+    width: 100%;
+    font-size: 12px;
   }
 `;
 
@@ -113,6 +123,7 @@ const MessageInput = styled.textarea`
   border: none;
   color: black;
   @media only screen and (max-width: 600px) {
+    min-width: 100%;
     max-width: 100%;
   }
 `;
@@ -121,7 +132,7 @@ const FormRow = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0.5em 0 0.5em 0;
-  width: 100%;
+  width: 80%;
   // border: 2px solid green;
   @media only screen and (max-width: 600px) {
     width: 100%;
@@ -133,9 +144,15 @@ const FormContainer = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  align-items: space-between;
+  // align-items: space-between;
+  // background: red;
+  margin: 0;
 `;
 
 const InputLabel = styled.label`
   font-size: 16px;
+`;
+const StyledForm = styled.form`
+  width: 100%;
+  // background: red;
 `;

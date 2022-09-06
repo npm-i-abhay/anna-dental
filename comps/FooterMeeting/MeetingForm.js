@@ -5,8 +5,20 @@ import styled from "styled-components";
 import { Container } from "../common/Container";
 
 export const MeetingForm = () => {
-  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const times = ["10:00 AM", "12:00 PM", "02:00 PM", "04:00 PM", "05:00 PM"];
+  const days = [
+    { day: "Monday", name: "day1" },
+    { day: "Tuesday", name: "day2" },
+    { day: "Wednesday", name: "day3" },
+    { day: "Thursday", name: "day4" },
+    { day: "Friday", name: "day5" },
+  ];
+  const times = [
+    { time: "10:00 AM", name: "time1" },
+    { time: "12:00 PM", name: "time2" },
+    { time: "02:00 PM", name: "time3" },
+    { time: "04:00 PM", name: "time4" },
+    { time: "05:00 PM", name: "time5" },
+  ];
 
   const [selected, setSelected] = useState({
     daysArray: [],
@@ -56,7 +68,7 @@ export const MeetingForm = () => {
   };
 
   return (
-    <Container>
+    <Container width="80%" mobWidth={"100%"}>
       <RequestContainer>
         <Request
           onChange={(e) => handleMeeting(e)}
@@ -65,36 +77,38 @@ export const MeetingForm = () => {
         />
         <Label>Request a Meeting</Label>
       </RequestContainer>
-
+      {/* <StyledForm ref={form} onSubmit={sendEmail}> */}
       <FlexRow display={meetingDisplay}>
         {days.map((day, i) => (
-          <DayTimeCont onClick={() => handleDays(day)} key={i}>
+          <DayTimeCont onClick={() => handleDays(day.day)} key={i}>
             <Request
               onChange={() => {}}
-              checked={selectedDays.includes(day) ? true : false}
-              value={day}
+              checked={selectedDays.includes(day.day) ? true : false}
+              value={day.day}
               type={"checkbox"}
-              name={day}
+              name={day.name}
             />
-            <Label>{day}</Label>
+            <Label>{day.day}</Label>
           </DayTimeCont>
         ))}
       </FlexRow>
 
       <FlexRow display={meetingDisplay}>
         {times.map((time, i) => (
-          <DayTimeCont onClick={() => handleTimes(time)} key={i}>
+          <DayTimeCont onClick={() => handleTimes(time.time)} key={i}>
             <Request
               onChange={() => {}}
-              checked={selectedTimes.includes(time) ? true : false}
-              value={time}
+              checked={selectedTimes.includes(time.time) ? true : false}
+              value={time.time}
               type={"checkbox"}
-              name={time}
+              name={time.name}
             />
-            <Label>{time}</Label>
+            <Label>{time.time}</Label>
           </DayTimeCont>
         ))}
       </FlexRow>
+      {/* <input type="submit" value="Send" /> */}
+      {/* </StyledForm> */}
     </Container>
   );
 };
@@ -134,7 +148,9 @@ const FlexRow = styled.div`
 const RequestedDay = styled.input`
   // height: 20px;
 `;
-
+const StyledForm = styled.form`
+  width: 80%;
+`;
 const RequestedTimes = styled.input`
   // height: 20px;
 `;
