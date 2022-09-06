@@ -12,7 +12,7 @@ import { Heading } from "./Heading";
 export const ServiceLayout = ({ children }) => {
   return (
     <Wrapper>
-      <NavBar />
+      {/* <NavBar /> */}
       {children}
       <FooterMeeting />
     </Wrapper>

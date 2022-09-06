@@ -10,6 +10,7 @@ import { ServicesIcons } from "@/comps/Services/ServicesIcons";
 
 // data imports
 import { servicesData } from "@/comps/Services/data";
+import { NavBar } from "@/comps/common/navigation/NavBar";
 
 export default function Service() {
   const { query } = useRouter();
@@ -36,19 +37,22 @@ export default function Service() {
   }, [query.service]);
 
   return (
-    <Container>
-      <ServiceLayout>
-        <ServiceBanner
-          productName={pageTypeProp.productName}
-          logoImgSrc={pageTypeProp.logoImgSrc}
-          productImgSrc={pageTypeProp.productImgSrc}
-          productCopy={pageTypeProp.productCopy}
-        />
-        <ServiceSubBanner
-        //  productSubHead={pageTypeProp.productSubHead}
-        />
-        <ServicesIcons />
-      </ServiceLayout>
-    </Container>
+    <>
+      <NavBar />
+      <Container>
+        <ServiceLayout>
+          <ServiceBanner
+            productName={pageTypeProp.productName}
+            logoImgSrc={pageTypeProp.logoImgSrc}
+            productImgSrc={pageTypeProp.productImgSrc}
+            productCopy={pageTypeProp.productCopy}
+          />
+          <ServiceSubBanner
+          //  productSubHead={pageTypeProp.productSubHead}
+          />
+          <ServicesIcons />
+        </ServiceLayout>
+      </Container>
+    </>
   );
 }

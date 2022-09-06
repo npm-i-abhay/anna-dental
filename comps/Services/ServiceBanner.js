@@ -100,8 +100,9 @@ export const ProductImage = styled.img`
   height: 40%;
   width: 40%;
   @media only screen and (max-width: 600px) {
-    height: 120%;
-    width: 120%;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
     position: absolute;
     bottom: -20%;
   }
