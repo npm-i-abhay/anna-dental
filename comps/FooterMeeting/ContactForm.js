@@ -78,6 +78,10 @@ export const ContactForm = ({ form, sendEmail }) => {
               />
             </InputContainer>
           </FormRow>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          />
           <MessageInput
             onChange={(e) => UpdateFormField(e, "message")}
             value={formFields.message}
@@ -122,6 +126,7 @@ const MessageInput = styled.textarea`
   background: lightgrey;
   border: none;
   color: black;
+  font-size: 16px;
   @media only screen and (max-width: 600px) {
     min-width: 100%;
     max-width: 100%;
