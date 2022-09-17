@@ -26,6 +26,8 @@ const Wrapper = styled.div`
   opacity: ${({ opacity }) => opacity};
   transition: all 0.5s;
   order: ${({ order }) => order};
+  border-bottom-right-radius: ${({ borderRight }) => borderRight};
+  border-top-left-radius: ${({ borderLeft }) => borderLeft};
   @media only screen and (max-width: 600px) {
     display: ${({ mobDisplay }) => mobDisplay};
     height: ${({ mobHeight }) => mobHeight};
@@ -74,6 +76,8 @@ export const Container = ({
   order,
   mobOrder,
   alignSelf,
+  borderLeft,
+  borderRight,
 }) => {
   return (
     <Wrapper
@@ -109,6 +113,8 @@ export const Container = ({
       order={order}
       mobOrder={mobOrder}
       alignSelf={alignSelf}
+      borderLeft={borderLeft}
+      borderRight={borderRight}
     >
       {children}
     </Wrapper>

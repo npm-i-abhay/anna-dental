@@ -97,7 +97,7 @@ export const IconCopy = styled.span`
 
 export const HeroCopy = styled.p`
   color: ${({ color }) => color};
-  width: 50%;
+  width: 45%;
   font-size: 20px;
   @media only screen and (max-width: 600px) {
     width: 100%;

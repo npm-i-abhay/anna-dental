@@ -1,4 +1,4 @@
-import React, { useState, useRef, forwardRef } from "react";
+import React, { useState, useRef, forwardRef, useEffect } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 
@@ -41,6 +41,12 @@ export const ContactForm = ({
     }
   };
 
+  const verify =
+    formFields.first !== "" &&
+    formFields.last !== "" &&
+    formFields.message &&
+    formFields.email !== "";
+
   return (
     <Container align="flex-start">
       <FormContainer>
@@ -49,6 +55,7 @@ export const ContactForm = ({
             <InputContainer>
               <InputLabel> First Name </InputLabel>
               <FieldInput
+                required
                 onChange={(e) => UpdateFormField(e, "first")}
                 value={formFields.first}
                 name="first_name"
@@ -94,7 +101,9 @@ export const ContactForm = ({
             name="message"
           />
           <MeetingForm />
-          <StyledButton disabled={disabled}>{sendText}</StyledButton>
+          <StyledButton disabled={!verify ? true : disabled}>
+            {sendText}
+          </StyledButton>
         </StyledForm>
       </FormContainer>
     </Container>

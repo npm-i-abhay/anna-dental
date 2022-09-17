@@ -382,6 +382,7 @@ const MenuLink = styled(motion.a)`
   // width: 180px;
   text-align: right;
   position: relative;
+  font-size: 1.1em;
 `;
 
 const DesktopLinkContainer = styled(motion.div)`

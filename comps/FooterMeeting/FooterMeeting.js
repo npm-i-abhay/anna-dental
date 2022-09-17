@@ -1,4 +1,10 @@
-import React, { createRef, useRef, forwardRef, useState } from "react";
+import React, {
+  createRef,
+  useRef,
+  forwardRef,
+  useState,
+  useEffect,
+} from "react";
 import styled, { useTheme } from "styled-components";
 // component import
 import { Container } from "../common/Container";
@@ -14,6 +20,8 @@ export const FooterMeeting = ({ info = "blah blah" }) => {
   const theme = useTheme();
   const form = useRef();
   const formTwo = useRef();
+  useEffect(() => {}, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
     setDisabled(true);
