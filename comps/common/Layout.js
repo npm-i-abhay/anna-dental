@@ -22,6 +22,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { AboutBanner } from "./AboutBanner";
 
 export const Layout = () => {
   const [sWidth, setSwidth] = useState();
@@ -41,17 +42,18 @@ export const Layout = () => {
   return (
     <Wrapper>
       <NavBar />
+      <AboutBanner />
       <HomeBanner />
       <SubBanner />
       <Heading heading={"What We Offer"} />
 
       <ServicesContainer>
         <Swiper
+          modules={[Pagination, Navigation]}
+          // navigation={sWidth < 600 ? true : false}
           slidesPerView={sWidth > 600 ? 4 : 2}
           spaceBetween={10}
-          // pagination={{
-          //   clickable: true,
-          // }}
+          pagination={{ clickable: true }}
         >
           {siteServices.map((service, index) => {
             return (
@@ -118,7 +120,15 @@ const ServicesContainer = styled.div`
   .swiper-button-prev {
     color: red;
   }
-
+  .swiper-pagination-bullet-active {
+    background-color: ${({ theme }) => theme.accent} !important;
+    height: 10px;
+    width: 10px;
+    transition: all 0.5s;
+  }
+  .swiper {
+    padding-bottom: 30px !important;
+  }
   // .swiper-button-prev {
   //     background-image: url(./next.svg);
   //     background-repeat: no-repeat;

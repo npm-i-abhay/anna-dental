@@ -78,10 +78,10 @@ export const IconCopy = styled.span`
   color: ${({ color }) => color};
   width: 100%;
   height: 300px;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   align-items: flex-start;
-  text-align: center;
+  text-align: left;
   justify-content: center;
   @media only screen and (max-width: 600px) {
     width: 100%;
@@ -97,8 +97,8 @@ export const IconCopy = styled.span`
 
 export const HeroCopy = styled.p`
   color: ${({ color }) => color};
-  width: 70%;
-  font-size: 25px;
+  width: 50%;
+  font-size: 20px;
   @media only screen and (max-width: 600px) {
     width: 100%;
     text-align: center;
@@ -151,8 +151,9 @@ export const ServiceExcerpt = styled.p`
 
 export const LearnButton = styled(motion.div)`
   color: ${({ theme }) => theme.cardText};
-  width: 50%;
-  height: 35px;
+  // width: 50%;
+  // height: 35px;
+  // padding: 0.25em 1em;
   display: flex;
   align-items: center;
   justify-content: center;

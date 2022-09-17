@@ -1,4 +1,4 @@
-import React, { createRef, useRef, forwardRef } from "react";
+import React, { createRef, useRef, forwardRef, useState } from "react";
 import styled, { useTheme } from "styled-components";
 // component import
 import { Container } from "../common/Container";
@@ -7,13 +7,17 @@ import { MeetingForm } from "./MeetingForm";
 import { ImInstagram, ImFacebook2, ImLinkedin } from "react-icons/im";
 import { AiOutlineGlobal } from "react-icons/ai";
 import emailjs from "@emailjs/browser";
+
 export const FooterMeeting = ({ info = "blah blah" }) => {
+  const [disabled, setDisabled] = useState(false);
+  const [sendText, setSendText] = useState("Say Hi");
   const theme = useTheme();
   const form = useRef();
   const formTwo = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setDisabled(true);
+    setSendText("Sending");
     emailjs
       .sendForm(
         "service_loqx9vb",
@@ -24,6 +28,11 @@ export const FooterMeeting = ({ info = "blah blah" }) => {
       .then(
         (result) => {
           console.log(result.text);
+          setSendText("Message Sent");
+          setTimeout(() => {
+            setSendText("Say Hi");
+            setDisabled(false);
+          }, 3000);
         },
         (error) => {
           console.log(error.text);
@@ -35,10 +44,11 @@ export const FooterMeeting = ({ info = "blah blah" }) => {
     <Container
       direction="row"
       width="98%"
-      bgCol={"white"}
+      radius={"10px"}
+      bgCol={"#fffff60"}
       mobPadding={0}
       height="100%"
-      shadow="2px -2px 10px #dddddd"
+      shadow="2px -2px 10px #dddddd50"
     >
       <FooterInfo>
         <Logo>
@@ -54,7 +64,12 @@ export const FooterMeeting = ({ info = "blah blah" }) => {
 
       <Container align="flex-start">
         <FooterHeading> Reach Out For the Best Advice </FooterHeading>
-        <ContactForm form={form} sendEmail={sendEmail} />
+        <ContactForm
+          sendText={sendText}
+          disabled={disabled}
+          form={form}
+          sendEmail={sendEmail}
+        />
       </Container>
       <a id="contact"></a>
     </Container>
@@ -99,7 +114,7 @@ const SocialIconCont = styled.div`
   width: 100%;
 `;
 const FooterHeading = styled.h1`
-  color: ;
+  color: ${({ theme }) => theme.serviceCard};
   @media only screen and (max-width: 600px) {
     font-size: 24px;
   }

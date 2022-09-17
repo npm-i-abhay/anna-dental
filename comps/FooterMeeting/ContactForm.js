@@ -5,7 +5,12 @@ import emailjs from "@emailjs/browser";
 // COMPONENT IMPORT
 import { Container } from "../common/Container";
 import { MeetingForm } from "./MeetingForm";
-export const ContactForm = ({ form, sendEmail }) => {
+export const ContactForm = ({
+  form,
+  sendEmail,
+  sendText = "Say Hi",
+  disabled = false,
+}) => {
   const [formFields, setFormFields] = useState({
     first: "",
     last: "",
@@ -89,7 +94,7 @@ export const ContactForm = ({ form, sendEmail }) => {
             name="message"
           />
           <MeetingForm />
-          <input type="submit" value="Send" />
+          <StyledButton disabled={disabled}>{sendText}</StyledButton>
         </StyledForm>
       </FormContainer>
     </Container>
@@ -160,4 +165,15 @@ const InputLabel = styled.label`
 const StyledForm = styled.form`
   width: 100%;
   // background: red;
+`;
+
+const StyledButton = styled.button`
+  width: 200px;
+  height: 30px;
+  background-color: ${({ theme }) => theme.accent};
+  border: none;
+  border-radius: 3px;
+  &:disabled {
+    background-color: grey;
+  }
 `;

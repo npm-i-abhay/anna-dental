@@ -39,7 +39,7 @@ export const ServicesIcons = ({
           key={i}
           width="100%"
           mobHeight={"100%"}
-          height="500px"
+          height="550px"
           justify="space-between"
           mobDirection="row"
         >
