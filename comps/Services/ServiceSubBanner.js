@@ -26,7 +26,12 @@ export const ServiceSubBanner = ({
   const theme = useTheme();
   return (
     <Container>
-      <Container radius={"4px"} bgColMob={theme.serviceCard}>
+      <Container
+        direction="row"
+        mobDirection="column"
+        radius={"4px"}
+        bgColMob={theme.serviceCard}
+      >
         <SubHeading>{productSubHead}</SubHeading>
         <HeroCopy color={sWidth > 500 ? theme.text : theme.cardText}>
           {productSubCopy}

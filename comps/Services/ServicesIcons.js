@@ -39,9 +39,12 @@ export const ServicesIcons = ({
           key={i}
           width="100%"
           mobHeight={"100%"}
-          height="500px"
+          height="550px"
           justify="space-between"
           mobDirection="row"
+          radius={"3px"}
+          border={"2px solid #26A3BF20"}
+          margin=".3em"
         >
           <Icon>
             <IconImg src={icon.imgUrl} />

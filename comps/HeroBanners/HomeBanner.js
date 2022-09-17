@@ -26,64 +26,86 @@ export const HomeBanner = () => {
       height="80%"
       zIndex={0}
     >
-      <HeroImage src="/people/heroPatient.jpg" />
-      {sWidth > 600 ? (
-        <HeroTextCont>
-          {" "}
-          <HeroHeading>
-            150,000 + SOLUTIONS <br />
-            AND
-            <br />
-            UNMATCHED SUPPORT
-          </HeroHeading>
-          <HeroCopy>
-            From toothbrushes to the latest dental technology and office design,
-            find the products, equipment, technology and services your practice
-            needs. Then count on our trusted, responsive sales and service teams
-            to offer you unwavering support.
-          </HeroCopy>
-        </HeroTextCont>
-      ) : (
-        <>
-          <HeroHeading>
-            150,000 + SOLUTIONS <br />
-            AND
-            <br />
-            UNMATCHED SUPPORT
-          </HeroHeading>
-          <HeroCopy>
-            From toothbrushes to the latest dental technology and office design,
-            find the products, equipment, technology and services your practice
-            needs. Then count on our trusted, responsive sales and service teams
-            to offer you unwavering support.
-          </HeroCopy>
-        </>
-      )}
+      <Container
+        direction="row"
+        mobDirection={"column"}
+        alignSelf={"flex-start"}
+        width="98%"
+        justify="space-between"
+      >
+        {sWidth > 600 ? (
+          <>
+            <HeroImage src="/people/heroPatient.jpg" />
+            <HeroTextCont>
+              {" "}
+              <HeroHeading>
+                150,000 + SOLUTIONS <br />
+                AND
+                <br />
+                UNMATCHED SUPPORT
+              </HeroHeading>
+              <HeroCopy>
+                From toothbrushes to the latest dental technology and office
+                design, find the products, equipment, technology and services
+                your practice needs. Then count on our trusted, responsive sales
+                and service teams to offer you unwavering support.
+              </HeroCopy>
+            </HeroTextCont>
+          </>
+        ) : (
+          <>
+            <HeroHeading>
+              150,000 + SOLUTIONS <br />
+              AND
+              <br />
+              UNMATCHED SUPPORT
+            </HeroHeading>
+            <HeroImage
+              topRightRadius="80px"
+              bottomLefttRadius="80px"
+              src="/people/heroPatient.jpg"
+            />
+            <HeroCopy>
+              From toothbrushes to the latest dental technology and office
+              design, find the products, equipment, technology and services your
+              practice needs. Then count on our trusted, responsive sales and
+              service teams to offer you unwavering support.
+            </HeroCopy>
+          </>
+        )}
+      </Container>
     </Container>
   );
 };
 
 export const HeroImage = styled.img`
   object-fit: cover;
-  width: 100%;
+  width: 50%;
+  border-radius: 10px;
+  border-top-right-radius: ${({ topRightRadius }) => topRightRadius || "150px"};
+  border-bottom-left-radius: ${({ bottomLefttRadius }) =>
+    bottomLefttRadius || "150px"};
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const HeroTextCont = styled.div`
-  width: 60%;
-  position: absolute;
-  background: ${({ theme }) => theme.heroTxtCont};
-  bottom: -10%;
-  left: 5%;
+  // position: absolute;
+  // background: ${({ theme }) => theme.heroTxtCont};
+  // background: ${({ theme }) => theme.body};
+  // background: red;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   // align-items: center;
+  width: 40%;
   padding: 0.5em;
   margin: 1.5em 0 1.5em 0;
 `;
 
 export const HeroHeading = styled.h1`
-  color: ${({ theme }) => theme.heroTxt};
+  color: ${({ theme }) => theme.serviceCard};
   line-height: 1.5em;
   text-align: left;
   @media only screen and (max-width: 600px) {
@@ -94,7 +116,7 @@ export const HeroHeading = styled.h1`
   }
 `;
 export const HeroCopy = styled.p`
-  color: ${({ theme }) => theme.heroTxt};
+  color: ${({ theme }) => theme.serviceCard};
   width: 100%;
   @media only screen and (max-width: 600px) {
     width: 100%;

@@ -55,7 +55,7 @@ export const NavBar = () => {
       },
     }),
     closed: {
-      clipPath: "circle(25px at 35px )",
+      clipPath: "circle(25px at 35px 5px )",
       justifyContent: "flex-start",
       alignItems: "center",
       transition: {
@@ -80,13 +80,13 @@ export const NavBar = () => {
       transition: {
         duration: 0.5,
         delay: 0.2,
-
         type: "spring",
         ease: "easeOut",
       },
     },
     rest: {
       justifyContent: "center",
+      color: theme.serviceCard,
       transition: {
         duration: 1,
         type: "spring",
@@ -219,9 +219,9 @@ export const NavBar = () => {
         </MobContainer>
       ) : (
         <Container
-          bgCol={"white"}
-          width="98%"
-          shadow={"2px 3px 5px  #999999;"}
+          bgCol={theme.body}
+          width="100%"
+          // shadow={"2px 3px 5px  #999999;"}
           radius="2px"
           // filter={"blur(4px)"}
           position="sticky"
@@ -382,6 +382,7 @@ const MenuLink = styled(motion.a)`
   // width: 180px;
   text-align: right;
   position: relative;
+  font-size: 1.1em;
 `;
 
 const DesktopLinkContainer = styled(motion.div)`

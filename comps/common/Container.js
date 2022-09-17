@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: ${({ direction }) => direction};
   align-items: ${({ align }) => align};
+  align-self: ${({ alignSelf }) => alignSelf};
   justify-content: ${({ justify }) => justify};
   height: ${({ height }) => height};
   width: ${({ width }) => width};
@@ -24,6 +25,9 @@ const Wrapper = styled.div`
   left: ${({ left }) => left};
   opacity: ${({ opacity }) => opacity};
   transition: all 0.5s;
+  order: ${({ order }) => order};
+  border-bottom-right-radius: ${({ borderRight }) => borderRight};
+  border-top-left-radius: ${({ borderLeft }) => borderLeft};
   @media only screen and (max-width: 600px) {
     display: ${({ mobDisplay }) => mobDisplay};
     height: ${({ mobHeight }) => mobHeight};
@@ -34,6 +38,7 @@ const Wrapper = styled.div`
     flex-flow: ${({ mobDirection }) => mobDirection};
     background-color: ${({ bgColMob }) => bgColMob};
     border-radius: ${({ mobRadius }) => mobRadius};
+    order: ${({ mobOrder }) => mobOrder};
   }
 `;
 
@@ -68,6 +73,11 @@ export const Container = ({
   marginL,
   marginR,
   onClick,
+  order,
+  mobOrder,
+  alignSelf,
+  borderLeft,
+  borderRight,
 }) => {
   return (
     <Wrapper
@@ -100,6 +110,11 @@ export const Container = ({
       marginL={marginL}
       marginR={marginR}
       onClick={onClick}
+      order={order}
+      mobOrder={mobOrder}
+      alignSelf={alignSelf}
+      borderLeft={borderLeft}
+      borderRight={borderRight}
     >
       {children}
     </Wrapper>

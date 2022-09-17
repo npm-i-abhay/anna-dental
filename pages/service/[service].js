@@ -46,6 +46,7 @@ export default function Service() {
             logoImgSrc={pageTypeProp.logoImgSrc}
             productImgSrc={pageTypeProp.productImgSrc}
             productCopy={pageTypeProp.productCopy}
+            subImageSrc={pageTypeProp.subImageSrc}
           />
           <ServiceSubBanner
           //  productSubHead={pageTypeProp.productSubHead}
