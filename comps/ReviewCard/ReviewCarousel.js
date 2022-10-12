@@ -69,7 +69,6 @@ const ReviewsContainer = styled.div`
 
 export const Controls = styled.div`
   display: flex;
-  // border:2px solid red;
   justify-content: space-between;
   width: 80%;
   margin: 50px;
@@ -77,6 +76,4 @@ export const Controls = styled.div`
 export const ControlsCont = styled.div`
   display: flex;
   justify-content: center;
-  // background-color:blue;
-  // width:100%;
 `;

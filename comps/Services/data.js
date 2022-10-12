@@ -14,12 +14,14 @@ export const servicesData = {
     iconCopyFour: "",
   },
   cerec: {
-    productName: "Cerec Dental Milling Machines",
+    productName: "Cerec",
     logoImgSrc: "/services/cerecLogo.png",
-    productImgSrc: "/services/cerec.png",
+    productImgSrc: "/services/cerec2.png",
     subImageSrc: "/services/cerecSubBanner.jpg",
-    productCopy:
-      "The CEREC milling and grinding units and the CEREC software are optimally synchronized with one another. Grinding and milling the restoration design is extremely precise, giving the restorations smooth surfaces. Even very fine fissures are very precisely prepared and the edges are very even. Our new milling and grinding units can also dry mill, making solid zirconia restorations in a single visit possible!",
+    productCopy: `In the current market dynamics, trust and hygiene have gained even more relevance for patients. They profit from the convenient and safe in-house production with CEREC:\n Restorations can be created in a single visit – a more efficient workflow with minimized patient risk
+      Appointment scheduling is optimized, reducing waiting time and social interactions
+      Every step of the workflow is being done in the practice reducing cross-contamination risk
+      With longer individual sittings, cleaning and disinfection protocols must be performed fewer times a day`,
     productSubHead: `Single visit dentistry for maximum safety`,
     productSubCopy: `In the current market dynamics, trust and hygiene have gained even more relevance for patients. They profit from the convenient and safe in-house production with CEREC:
     Restorations can be created in a single visit – a more efficient workflow with minimized patient risk

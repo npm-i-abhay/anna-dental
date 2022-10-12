@@ -5,13 +5,15 @@ export const ProductName = styled.h1`
   text-align: center;
   margin-top: 2em;
   color: ${({ theme }) => theme.heroHeadMob};
-
-  //   background: yellow;
 `;
 
 export const SubHeading = styled.h1`
   color: ${({ theme }) => theme.headings};
   text-align: center;
+  width: 50%;
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -31,7 +33,6 @@ export const ProductImage = styled.img`
     position: absolute;
     bottom: -20%;
   }
-  //   z-index: 2000;
 `;
 
 export const Logo = styled.div`
@@ -39,8 +40,6 @@ export const Logo = styled.div`
   width: 50%;
   display: flex;
   justify-content: center;
-  //   border-radius: 80px;
-  //   background: grey;
 `;
 export const LogoImg = styled.img`
   object-fit: cover;
@@ -57,20 +56,18 @@ export const Icon = styled.div`
   width: 200px;
   display: flex;
   justify-content: center;
-  //   border-radius: 80px;
-  // background: pink;
   @media only screen and (max-width: 600px) {
     height: 50%;
     width: 50%;
   }
 `;
 export const IconImg = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   height: 60%;
   width: 60%;
   @media only screen and (max-width: 600px) {
-    height: 100%;
-    width: 100%;
+    height: 70%;
+    width: 70%;
   }
 `;
 
@@ -124,13 +121,16 @@ export const ServiceImage = styled.img`
   border-bottom-radius: 40px;
 `;
 export const TextContainer = styled.div`
-  height: 40%;
-  // background: green;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 1em;
+  justify-content: flex-start;
+  padding: 0.2em;
+  overflow: hidden;
+  @media (max-width: 650px) {
+    height: 130px;
+  }
 `;
 
 export const ServiceName = styled.h3`
@@ -138,31 +138,38 @@ export const ServiceName = styled.h3`
   margin: 0;
 `;
 
+export const StyledCopyButtonContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const ServiceExcerpt = styled.p`
   color: ${({ theme }) => theme.cardText};
   text-align: center;
-  // padding: 0.5em;
-  font-size: 14px;
-  @media only screen and (max-width: 600px) {
-    width: 100%;
-    font-size: 12px;
+  font-size: 0.8em;
+  width: 100%;
+  text-overflow: ellipsis;
+  @media only screen and (max-width: 650px) {
+    font-size: 0.5em;
   }
 `;
 
 export const LearnButton = styled(motion.div)`
   color: ${({ theme }) => theme.cardText};
-  // width: 50%;
-  // height: 35px;
-  // padding: 0.25em 1em;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin: 0px;
   border: 2px solid ${({ theme }) => theme.accent};
   text-align: center;
   border-radius: 3px;
-  @media only screen and (max-width: 600px) {
-    width: 100%;
+  @media only screen and (max-width: 650px) {
+    width: 80%;
     font-size: 12px;
   }
 `;

@@ -13,6 +13,7 @@ import {
   ImgContainer,
   ServiceImage,
   TextContainer,
+  StyledCopyButtonContainer,
 } from "./styles";
 
 export const Services = ({
@@ -27,10 +28,11 @@ export const Services = ({
     <Container
       radius="3px"
       width="100%"
-      height="100%"
+      height="500px"
+      mobHeight="350px"
       mobWidth={"100%"}
       padding={0}
-      justify="space-between"
+      justify="flex-start"
       bgCol={theme.serviceCard}
     >
       <ImgContainer>
@@ -38,13 +40,15 @@ export const Services = ({
       </ImgContainer>
       <TextContainer>
         <ServiceName>{serviceName}</ServiceName>
-        <ServiceExcerpt>{serviceExcerpt}</ServiceExcerpt>
-        <LearnButton
-          onClick={() => r.push(`/${serviceLink}`)}
-          whileHover={{ scale: 1.1 }}
-        >
-          Learn More
-        </LearnButton>
+        <StyledCopyButtonContainer>
+          <ServiceExcerpt>{serviceExcerpt.substring(0, 70)}...</ServiceExcerpt>
+          <LearnButton
+            onClick={() => r.push(`/${serviceLink}`)}
+            whileHover={{ scale: 1.1 }}
+          >
+            Learn More
+          </LearnButton>
+        </StyledCopyButtonContainer>
       </TextContainer>
     </Container>
   );

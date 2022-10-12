@@ -51,7 +51,7 @@ export const Layout = () => {
         <Swiper
           modules={[Pagination, Navigation]}
           // navigation={sWidth < 600 ? true : false}
-          slidesPerView={sWidth > 600 ? 4 : 2}
+          slidesPerView={sWidth > 650 ? 4 : 2}
           spaceBetween={10}
           pagination={{ clickable: true }}
         >
@@ -73,9 +73,9 @@ export const Layout = () => {
       <ServicesContainer>
         <Swiper
           modules={[Navigation, Pagination]}
-          slidesPerView={sWidth > 600 ? 3 : 1}
+          slidesPerView={sWidth > 650 ? 3 : 1}
           spaceBetween={10}
-          navigation={sWidth > 600 ? true : false}
+          navigation={sWidth > 650 ? true : false}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           // pagination={{
@@ -118,7 +118,7 @@ const ServicesContainer = styled.div`
   justify-content: space-around;
   .swiper-button-next,
   .swiper-button-prev {
-    color: red;
+    color: ${({ theme }) => theme.accent};
   }
   .swiper-pagination-bullet-active {
     background-color: ${({ theme }) => theme.accent} !important;

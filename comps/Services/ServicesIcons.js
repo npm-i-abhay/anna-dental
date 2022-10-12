@@ -25,10 +25,10 @@ export const ServicesIcons = ({
     // detecting when the screen resizes
   }, [sWidth]);
   const iconsArray = [
-    { imgUrl: "/services/growth.png", copy: iconCopyOne },
-    { imgUrl: "/services/computer.png", copy: iconCopyTwo },
-    { imgUrl: "/services/time.png", copy: iconCopyThree },
-    { imgUrl: "/services/drill.png", copy: iconCopyFour },
+    { imgUrl: "/services/shield.png", copy: iconCopyOne },
+    { imgUrl: "/services/shineTooth.png", copy: iconCopyTwo },
+    { imgUrl: "/services/implant.png", copy: iconCopyThree },
+    { imgUrl: "/services/tools.png", copy: iconCopyFour },
   ];
 
   const theme = useTheme();

@@ -44,7 +44,7 @@ const Wrapper = styled.div`
 
 export const Container = ({
   align = "center",
-  justify = "space-around",
+  justify = "center",
   height = "100%",
   width = "100%",
   direction = "column",

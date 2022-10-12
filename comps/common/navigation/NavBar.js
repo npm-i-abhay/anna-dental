@@ -141,6 +141,67 @@ export const NavBar = () => {
       },
     },
   };
+
+  const barVariants = {
+    open: {
+      rotate: 220,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        type: "spring",
+        ease: "easeOut",
+      },
+    },
+    closed: {
+      rotate: 0,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        type: "spring",
+        ease: "easeOut",
+      },
+    },
+    openTwo: {
+      width: 30,
+      y: -7,
+      rotate: -220,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        type: "spring",
+        ease: "easeOut",
+      },
+    },
+    closedTwo: {
+      width: 20,
+      y: 0,
+      rotate: 0,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        type: "spring",
+        ease: "easeOut",
+      },
+    },
+    openThree: {
+      width: 0,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        // type: "spring",
+        ease: "easeOut",
+      },
+    },
+    closedThree: {
+      width: 30,
+      transition: {
+        duration: 1,
+        delay: 0.2,
+        type: "spring",
+        ease: "easeOut",
+      },
+    },
+  };
   return (
     <>
       {sWidth < 600 ? (
@@ -152,9 +213,21 @@ export const NavBar = () => {
           >
             <Background variants={sidebar}>
               <HamBarContainer onClick={() => handleMenu()}>
-                <Bar1 />
-                <Bar2 />
-                <Bar3 />
+                <Bar1
+                  variants={barVariants}
+                  initial={"closed"}
+                  animate={isOpen ? "open" : "closed"}
+                />
+                <Bar2
+                  variants={barVariants}
+                  initial={"closedTwo"}
+                  animate={isOpen ? "openTwo" : "closedTwo"}
+                />
+                <Bar3
+                  variants={barVariants}
+                  initial={"closedThree"}
+                  animate={isOpen ? "openThree" : "closedThree"}
+                />
               </HamBarContainer>
               <Menu
                 display={menuDisplay}
@@ -216,6 +289,11 @@ export const NavBar = () => {
               </Menu>
             </Background>
           </HamContainer>
+          <DesktopLogoContainer>
+            <Logo>
+              <LogoImg src="/graphics/logo2.png" />
+            </Logo>
+          </DesktopLogoContainer>
         </MobContainer>
       ) : (
         <Container
@@ -232,8 +310,7 @@ export const NavBar = () => {
         >
           <DesktopLogoContainer>
             <Logo>
-              {" "}
-              <LogoImg src="/people/person.jpg" />{" "}
+              <LogoImg src="/graphics/logo2.png" />
             </Logo>
           </DesktopLogoContainer>
           <DesktopLinkContainer>
@@ -324,7 +401,7 @@ const MobContainer = styled.div`
   align-items: flex-end;
   position: sticky;
   top: 0px;
-  // background: green;
+  justify-content: center;
   width: 100%;
   margin-top: 0.25em;
   z-index: 999999;
@@ -334,24 +411,20 @@ const HamContainer = styled(motion.div)`
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  // background: pink;
-
-  // height: 100px;
-  // width: 100%;
 `;
-const Bar1 = styled.div`
+const Bar1 = styled(motion.div)`
   height: 3px;
   width: 30px;
   margin-bottom: 0.2em;
   background-color: ${({ theme }) => theme.hamMenu};
 `;
-const Bar2 = styled.div`
+const Bar2 = styled(motion.div)`
   height: 3px;
   width: 20px;
   margin-bottom: 0.2em;
   background-color: ${({ theme }) => theme.hamMenu};
 `;
-const Bar3 = styled.div`
+const Bar3 = styled(motion.div)`
   height: 3px;
   width: 30px;
   margin-bottom: 0.2em;
@@ -370,16 +443,13 @@ const Menu = styled(motion.div)`
   position: absolute;
   top: -25px;
   right: 0px;
-  // background: ${({ theme }) => theme.lilacAccent};
   background: ${({ theme }) => theme.serviceCard};
-  // backdrop-filter: blur(5px);
   z-index: 2;
 `;
 const MenuLink = styled(motion.a)`
   padding: 0.25em;
   display: flex;
   justify-content: flex-end;
-  // width: 180px;
   text-align: right;
   position: relative;
   font-size: 1.1em;
@@ -390,25 +460,26 @@ const DesktopLinkContainer = styled(motion.div)`
   display: flex;
   justify-content: space-around;
   color: black;
-  // background: green;
 `;
 const DesktopLogoContainer = styled.div`
-  width: 40%;
+  width: 30%;
   display: flex;
-  // background: green;
+
+  @media (max-width: 650px) {
+    margin-top: -1em;
+  }
 `;
 
 export const Logo = styled.div`
-  height: 100px;
-  width: 100px;
-  border-radius: 80px;
-  background: grey;
+  // height: 100px;
+  // width: 100px;
+  // border-radius: 80px;
+  // background: grey;
 `;
 export const LogoImg = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
-  border-radius: 80px;
 `;
 
 const ServicesContainer = styled(motion.div)`
@@ -416,7 +487,6 @@ const ServicesContainer = styled(motion.div)`
   width: 180px;
   position: absolute;
   top: 35px;
-  // display: ${({ disp }) => disp};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -448,8 +518,6 @@ const Background = styled(motion.div)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  // border: 2px solid blue;
-  // z-index: 99999999;
 `;
 
 const HamBarContainer = styled.div`

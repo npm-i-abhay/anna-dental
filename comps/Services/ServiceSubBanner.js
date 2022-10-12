@@ -31,6 +31,7 @@ export const ServiceSubBanner = ({
         mobDirection="column"
         radius={"4px"}
         bgColMob={theme.serviceCard}
+        justify="space-between"
       >
         <SubHeading>{productSubHead}</SubHeading>
         <HeroCopy color={sWidth > 500 ? theme.text : theme.cardText}>

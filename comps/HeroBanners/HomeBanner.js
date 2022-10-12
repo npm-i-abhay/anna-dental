@@ -45,10 +45,11 @@ export const HomeBanner = () => {
                 UNMATCHED SUPPORT
               </HeroHeading>
               <HeroCopy>
-                From toothbrushes to the latest dental technology and office
-                design, find the products, equipment, technology and services
-                your practice needs. Then count on our trusted, responsive sales
-                and service teams to offer you unwavering support.
+                From your everyday consumables to the latest dental technology
+                and office design, find the products, equipment, technology and
+                services your practice needs. Then count on our trusted,
+                responsive sales and service teams to offer you unrivaled
+                support.
               </HeroCopy>
             </HeroTextCont>
           </>
@@ -66,10 +67,10 @@ export const HomeBanner = () => {
               src="/people/heroPatient.jpg"
             />
             <HeroCopy>
-              From toothbrushes to the latest dental technology and office
-              design, find the products, equipment, technology and services your
-              practice needs. Then count on our trusted, responsive sales and
-              service teams to offer you unwavering support.
+              From your everyday consumables to the latest dental technology and
+              office design, find the products, equipment, technology and
+              services your practice needs. Then count on our trusted,
+              responsive sales and service teams to offer you unrivaled support.
             </HeroCopy>
           </>
         )}

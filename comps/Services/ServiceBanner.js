@@ -27,21 +27,19 @@ export const ServiceBanner = ({
 
   const theme = useTheme();
   return (
-    <Container padding={"2em"}>
+    <Container>
       <Logo>
         <LogoImg src={logoImgSrc} />
       </Logo>
 
       <Container
         mobRadius={"100px"}
-        bgColMob={theme.heroTxtCont}
-        mobHeight="500px"
+        // bgColMob={theme.heroTxtCont}
+        mobHeight="auto"
         position="relative"
-        // height="20%"
         width={"100%"}
-        // border="2px solid red"
         direction="row"
-        // shadow={"0px 5px 10px 5px #88888850"}
+        justify="space-between"
       >
         {sWidth > 500 && (
           <>
@@ -55,7 +53,12 @@ export const ServiceBanner = ({
       </Container>
 
       {sWidth < 500 && <ProductName fontSize="38px">{productName}</ProductName>}
-      <Container width="100%" mobDirection={"column"} direction="row">
+      <Container
+        justify="space-between"
+        width="100%"
+        mobDirection={"column"}
+        direction="row"
+      >
         <SubServiceImage src={subImageSrc} />
         <HeroCopy color={theme.text}>{productCopy}</HeroCopy>
       </Container>
@@ -70,8 +73,11 @@ const ProductName = styled.h1`
   text-align: left;
   margin-top: 2em;
   color: ${({ theme }) => theme.heroHeadMob};
+  width: 50%;
   @media only screen and (max-width: 600px) {
     text-align: center;
+    width: 100%;
+    margin-top: 0;
   }
 `;
 
@@ -84,14 +90,14 @@ export const ImageContainer = styled.div`
 
 export const ProductImage = styled.img`
   object-fit: contain;
-  height: 40%;
+  height: auto;
   width: 40%;
   border-radius: 2%;
   border-top-right-radius: 30%;
   border-bottom-left-radius: 30%;
   @media only screen and (max-width: 600px) {
     object-fit: contain;
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 `;
