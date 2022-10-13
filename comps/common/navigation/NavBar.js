@@ -290,9 +290,9 @@ export const NavBar = () => {
             </Background>
           </HamContainer>
           <DesktopLogoContainer>
-            <Logo>
+            <a href={"/"} passHref>
               <LogoImg src="/graphics/logo2.png" />
-            </Logo>
+            </a>
           </DesktopLogoContainer>
         </MobContainer>
       ) : (
@@ -309,9 +309,9 @@ export const NavBar = () => {
           zIndex={2}
         >
           <DesktopLogoContainer>
-            <Logo>
+            <Link href={"/"} passHref>
               <LogoImg src="/graphics/logo2.png" />
-            </Logo>
+            </Link>
           </DesktopLogoContainer>
           <DesktopLinkContainer>
             <Link href={"/"} passHref>
@@ -405,6 +405,7 @@ const MobContainer = styled.div`
   width: 100%;
   margin-top: 0.25em;
   z-index: 999999;
+  backdrop-filter: blur(2px);
 `;
 const HamContainer = styled(motion.div)`
   padding: 0.4em;
@@ -467,6 +468,7 @@ const DesktopLogoContainer = styled.div`
 
   @media (max-width: 650px) {
     margin-top: -1em;
+    // backdrop-filter: blur(3px);
   }
 `;
 
@@ -478,8 +480,13 @@ export const Logo = styled.div`
 `;
 export const LogoImg = styled.img`
   object-fit: contain;
-  height: 100%;
-  width: 100%;
+  height: 40%;
+  width: 40%;
+  cursor: pointer;
+  @media (max-width: 650px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const ServicesContainer = styled(motion.div)`

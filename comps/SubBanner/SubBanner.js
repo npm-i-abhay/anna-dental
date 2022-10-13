@@ -27,10 +27,7 @@ export const SubBanner = ({ subImageSrc = "", productCopy }) => {
         mobDirection={"column"}
         // direction="row"
       >
-        <HeroHeading>
-          We've partnered up with smile shop marketing to provide even more
-          support
-        </HeroHeading>
+        <HeroHeading>Our Newest Partners</HeroHeading>
         <Container
           width="100%"
           // border={"2px solid red"}
