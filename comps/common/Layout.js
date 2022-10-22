@@ -27,17 +27,15 @@ import { AboutBanner } from "./AboutBanner";
 export const Layout = () => {
   const [sWidth, setSwidth] = useState();
 
-  useEffect(() => {
-    window.onload = () => {
-      setSwidth(window.innerWidth);
-    };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   return (
     <Wrapper>
@@ -82,10 +80,10 @@ export const Layout = () => {
           //   clickable: true,
           // }}
         >
-          {siteReviews.map((service, index) => {
+          {siteReviews.map((review, index) => {
             return (
-              <SwiperSlide>
-                <Review />
+              <SwiperSlide key={index}>
+                <Review body={review.body} />
               </SwiperSlide>
             );
           })}

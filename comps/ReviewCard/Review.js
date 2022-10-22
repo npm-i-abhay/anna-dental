@@ -34,7 +34,7 @@ export const Review = ({
     <Container
       width={`${dim + 30}%`}
       mobWidth="100%"
-      height={`${dim + 30}%`}
+      // height={"500px"}
       bgCol={theme.reviewBg}
       padding=".5em"
       border={`3px solid ${theme.hamMenu} `}
@@ -46,6 +46,7 @@ export const Review = ({
       opacity={opacity}
       zIndex={z}
       onClick={onClick}
+      justify={"space-between"}
     >
       <ReviewHeader>
         <Avatar>

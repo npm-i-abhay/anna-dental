@@ -10,18 +10,15 @@ export const ServiceSubBanner = ({
   productSubCopy = "By eliminating the primary causes of patient anxiety (the needle and the drill), Solea delivers a dental experience patients prefer. When needles, numbness, the sound of the drill, and the pain are all removed from the experience, ",
 }) => {
   const [sWidth, setSwidth] = useState();
-  useEffect(() => {
-    // window.onload = () => {
-    //   setSwidth(window.innerWidth);
-    // };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-      console.log("swidth", sWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   const theme = useTheme();
   return (

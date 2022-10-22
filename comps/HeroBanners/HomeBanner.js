@@ -6,17 +6,15 @@ import { Container } from "../common/Container";
 export const HomeBanner = () => {
   const [sWidth, setSwidth] = useState();
 
-  useEffect(() => {
-    window.onload = () => {
-      setSwidth(window.innerWidth);
-    };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   return (
     <Container

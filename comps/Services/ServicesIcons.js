@@ -12,18 +12,16 @@ export const ServicesIcons = ({
   iconCopyFour = "Full-contour zirconia restorations are sintered and glazed chairside in the compact CEREC SpeedFire. The induction technology allows unparalleled short sintering and firing times.",
 }) => {
   const [sWidth, setSwidth] = useState();
-  useEffect(() => {
-    // window.onload = () => {
-    //   setSwidth(window.innerWidth);
-    // };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-      console.log("swidth", sWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
+
   const iconsArray = [
     { imgUrl: "/services/shield.png", copy: iconCopyOne },
     { imgUrl: "/services/shineTooth.png", copy: iconCopyTwo },

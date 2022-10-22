@@ -9,18 +9,16 @@ export const MarketingIcons = ({
   iconCopyThree = "Through thousands of experiments and A/B tests, we’ve distilled our experiences and expertise into a formula that’s proven to work.",
 }) => {
   const [sWidth, setSwidth] = useState();
-  useEffect(() => {
-    // window.onload = () => {
-    //   setSwidth(window.innerWidth);
-    // };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-      console.log("swidth", sWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
+
   const iconsArray = [
     { imgUrl: "/graphics/idea.png", copy: iconCopyOne },
     { imgUrl: "/graphics/team.png", copy: iconCopyTwo },

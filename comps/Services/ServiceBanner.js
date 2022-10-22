@@ -12,18 +12,15 @@ export const ServiceBanner = ({
 }) => {
   const [sWidth, setSwidth] = useState();
 
-  useEffect(() => {
-    // window.onload = () => {
-    //   setSwidth(window.innerWidth);
-    // };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-      console.log("swidth", sWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   const theme = useTheme();
   return (

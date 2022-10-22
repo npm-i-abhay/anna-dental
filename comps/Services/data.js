@@ -49,11 +49,12 @@ export const servicesData = {
     iconCopyFour: "",
   },
   sundries: {
-    productName: "Some Heading Here About Sundries",
+    productName: "Sundries",
     logoImgSrc: "/services/pattersonLogo.png",
     productImgSrc: "/services/sundries2.png",
-    subImageSrc: "/services/sundriesSubBanner.jpg",
-    productCopy: "",
+    subImageSrc: "/services/sundriesSub2.png",
+    productCopy:
+      "Using my knowledge from being a CDA and having ordered all supplies for the office I worked at, I am confident I can help you with all your product needs. From getting the best deals to finding solutions for your pain points or helping you and the team to improve your workflow or stay organized. All dealers will carry similar products. We all buy from the same manufacturers. With Patterson, you can earn points with every dollar you spend in the Sundries category. The points never expire and can be applied to equipment purchases. Contact me for further details.",
     productSubHead: "",
     productSubCopy: "",
     iconCopyOne: "",

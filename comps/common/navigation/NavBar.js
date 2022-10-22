@@ -27,18 +27,15 @@ export const NavBar = () => {
 
   const [sWidth, setSwidth] = useState();
 
-  useEffect(() => {
-    // window.onload = () => {
-    //   setSwidth(window.innerWidth);
-    // };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-      console.log("swidth", sWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   const sidebar = {
     open: (height = 1000) => ({
@@ -218,11 +215,11 @@ export const NavBar = () => {
       >
         <DesktopLogoContainer>
           <Link href={"/"} passHref>
-            <LogoImg src="/graphics/logo2.png" />
+            <LogoImg src="/graphics/anna-logo.png" />
           </Link>
         </DesktopLogoContainer>
         <DesktopLinkContainer>
-          <Link href={"/"} passHref>
+          {/* <Link href={"/"} passHref>
             <MenuLink
               initial={"rest"}
               variants={LinkHover}
@@ -231,7 +228,7 @@ export const NavBar = () => {
             >
               Home
             </MenuLink>
-          </Link>
+          </Link> */}
 
           <div>
             <MenuLink
@@ -372,7 +369,7 @@ const DesktopLinkContainer = styled(motion.div)`
 const DesktopLogoContainer = styled.div`
   width: 30%;
   display: flex;
-
+  padding: 1em;
   @media (max-width: 650px) {
     margin-top: -1em;
     // backdrop-filter: blur(3px);
@@ -448,3 +445,190 @@ const HamBarContainer = styled.div`
 const LinkContainer = styled(motion.div)`
   color: white;
 `;
+
+{
+  /* {sWidth < 600 ? ( */
+}
+// <MobContainer>
+//   <HamContainer
+//     initial={false}
+//     animate={isOpen ? "open" : "closed"}
+//     // onClick={() => toggleOpen()}
+//   >
+//     <Background variants={sidebar}>
+//       <HamBarContainer onClick={() => handleMenu()}>
+//         <Bar1
+//           variants={barVariants}
+//           initial={"closed"}
+//           animate={isOpen ? "open" : "closed"}
+//         />
+//         <Bar2
+//           variants={barVariants}
+//           initial={"closedTwo"}
+//           animate={isOpen ? "openTwo" : "closedTwo"}
+//         />
+//         <Bar3
+//           variants={barVariants}
+//           initial={"closedThree"}
+//           animate={isOpen ? "openThree" : "closedThree"}
+//         />
+//       </HamBarContainer>
+//       <Menu
+//         display={menuDisplay}
+//         variants={childrenVariants}
+//         // animate={isOpen ? { backgroundColor: "white" } : "white"}
+//       >
+//         <LinkContainer variants={linkVariants}>
+//           <MenuLink href="/">Home</MenuLink>
+//         </LinkContainer>
+
+//         <LinkContainer variants={linkVariants}>
+//           <MenuLink onClick={() => handleMenu()} href="#contact">
+//             Contact
+//           </MenuLink>
+//         </LinkContainer>
+
+//         <LinkContainer variants={linkVariants}>
+//           <MenuLink
+//             variants={childrenVariants}
+//             onClick={() => toggleOpen()}
+//           >
+//             Services +
+//             <MobServicesContainer
+//               variants={servicesVariants}
+//               initial={false}
+//               animate={isServices ? "open" : "closed"}
+//             >
+//               {/* {serviceDropDown > 0 && ( */}
+//               <>
+//                 <LinkContainer variants={linkVariants} passHref>
+//                   <MenuLink href={"/service/solea"}>Solea</MenuLink>
+//                 </LinkContainer>
+//                 <LinkContainer variants={linkVariants} passHref>
+//                   <MenuLink href={"/service/cerec"}> Cerec </MenuLink>
+//                 </LinkContainer>
+//                 <LinkContainer variants={linkVariants} passHref>
+//                   <MenuLink href={"/service/new-office"}>
+//                     New Office{" "}
+//                   </MenuLink>
+//                 </LinkContainer>
+//                 <LinkContainer variants={linkVariants} passHref>
+//                   <MenuLink href={"/service/sundries"}>
+//                     {" "}
+//                     Sundries
+//                   </MenuLink>
+//                 </LinkContainer>
+//               </>
+//               {/* )} */}
+//             </MobServicesContainer>
+//           </MenuLink>
+//         </LinkContainer>
+
+//         <LinkContainer
+//           onClick={() => handleMenu()}
+//           variants={linkVariants}
+//         >
+//           {/* <MenuLink href="#reviews">Reviews</MenuLink> */}
+//         </LinkContainer>
+//       </Menu>
+//     </Background>
+//   </HamContainer>
+//   <DesktopLogoContainer>
+//     <a href={"/"} passHref>
+//       <LogoImg src="/graphics/anna-logo.png" />
+//     </a>
+//   </DesktopLogoContainer>
+// </MobContainer>
+// ) : (
+// <Container
+//   bgCol={theme.body}
+//   width="100%"
+//   // shadow={"2px 3px 5px  #999999;"}
+//   radius="2px"
+//   // filter={"blur(4px)"}
+//   position="sticky"
+//   top="0px"
+//   height="80%"
+//   direction="row"
+//   zIndex={2}
+// >
+//   <DesktopLogoContainer>
+//     <Link href={"/"} passHref>
+//       <LogoImg src="/graphics/anna-logo.png" />
+//     </Link>
+//   </DesktopLogoContainer>
+//   <DesktopLinkContainer>
+//     <Link href={"/"} passHref>
+//       <MenuLink
+//         initial={"rest"}
+//         variants={LinkHover}
+//         animate={"rest"}
+//         whileHover={"hover"}
+//       >
+//         Home
+//       </MenuLink>
+//     </Link>
+
+//     <div>
+//       <MenuLink
+//         href="#contact"
+//         initial={"rest"}
+//         variants={LinkHover}
+//         animate={"rest"}
+//         whileHover={"hover"}
+//       >
+//         Contact
+//       </MenuLink>
+//     </div>
+
+//     <Link
+//       href={"/"}
+//       passHref
+//       // style={{ background: "red", height: "100%" }}
+//       // animate={serviceDropDown == 300 ? "open" : "closed"}
+//       // variants={sidebar}
+//     >
+//       <MenuLink
+//         initial={"rest"}
+//         variants={LinkHover}
+//         animate={"rest"}
+//         whileHover={"hover"}
+//         onMouseEnter={() => setServiceDropDown(300)}
+//         onMouseLeave={() => setServiceDropDown(0)}
+//       >
+//         Services
+//         <ServicesContainer disp={serviceDropDown}>
+//           {serviceDropDown > 0 && (
+//             <>
+//               <Link href={"/service/solea"} passHref>
+//                 <MenuLink>Solea</MenuLink>
+//               </Link>
+//               <Link href={"/service/cerec"} passHref>
+//                 <MenuLink> Cerec </MenuLink>
+//               </Link>
+//               <Link href={"/service/new-office"} passHref>
+//                 <MenuLink> New Office </MenuLink>
+//               </Link>
+//               <Link href={"/service/sundries"} passHref>
+//                 <MenuLink> Sundries</MenuLink>
+//               </Link>
+//             </>
+//           )}
+//         </ServicesContainer>
+//       </MenuLink>
+//     </Link>
+
+//     {/* <div>
+//       <MenuLink
+//         initial={"rest"}
+//         variants={LinkHover}
+//         animate={"rest"}
+//         whileHover={"hover"}
+//         href="#reviews"
+//       >
+//         Reviews
+//       </MenuLink>
+//     </div> */}
+//   </DesktopLinkContainer>
+// </Container>
+// )}

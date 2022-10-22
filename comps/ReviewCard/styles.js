@@ -36,6 +36,8 @@ export const Reviewer = styled.h4`
 export const ReviewBody = styled.p`
   font-size: 14px;
   width: 80%;
+  // border: 2px solid red;
+  height: 70%;
   @media only screen and (max-width: 600px) {
     width: 100%;
     font-size: 12px;

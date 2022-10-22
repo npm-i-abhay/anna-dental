@@ -6,17 +6,15 @@ import { MarketingIcons } from "./MarketingIcons";
 export const SubBanner = ({ subImageSrc = "", productCopy }) => {
   const [sWidth, setSwidth] = useState();
   const theme = useTheme();
-  useEffect(() => {
-    window.onload = () => {
-      setSwidth(window.innerWidth);
-    };
-    window.onresize = () => {
-      setSwidth(window.innerWidth);
-    };
+  const handleResize = () => {
     setSwidth(window.innerWidth);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    window.innerWidth < 800 && setSwidth(500);
     // detecting when the screen resizes
-  }, [sWidth]);
+  }, []);
 
   const { basePath } = useRouter();
   return (
