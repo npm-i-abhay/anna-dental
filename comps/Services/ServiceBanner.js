@@ -10,7 +10,7 @@ export const ServiceBanner = ({
   subImageSrc = "/services/soleaSubBanner.jpg",
   productCopy = "Solea® is a breakthrough technology that enables virtually every cavity prep to be performed anesthesia-free, delivering a dental experience patients prefer. Solea also enables soft tissue procedures that are blood-free and suture-free with minimal post-op discomfort and remarkably rapid healing.",
 }) => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
 
   const handleResize = () => {
     setSwidth(window.innerWidth);

@@ -11,7 +11,7 @@ export const ServicesIcons = ({
   iconCopyThree = "The CEREC grinding and milling unit and CEREC software are optimally matched. Milling/grinding the (solid zirconia) restoration design is extremely precise, giving the restorations smooth surfaces and edges and very fine fissures.",
   iconCopyFour = "Full-contour zirconia restorations are sintered and glazed chairside in the compact CEREC SpeedFire. The induction technology allows unparalleled short sintering and firing times.",
 }) => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
   const handleResize = () => {
     setSwidth(window.innerWidth);
   };

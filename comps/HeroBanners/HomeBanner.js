@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Container } from "../common/Container";
 
 export const HomeBanner = () => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
 
   const handleResize = () => {
     setSwidth(window.innerWidth);

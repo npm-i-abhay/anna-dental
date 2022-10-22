@@ -8,7 +8,7 @@ export const MarketingIcons = ({
   iconCopyTwo = "Working with us gives you ongoing access to digital marketing experts, including strategists, designers, web architects, copywriters, and more.",
   iconCopyThree = "Through thousands of experiments and A/B tests, we’ve distilled our experiences and expertise into a formula that’s proven to work.",
 }) => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
   const handleResize = () => {
     setSwidth(window.innerWidth);
   };

@@ -25,7 +25,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { AboutBanner } from "./AboutBanner";
 
 export const Layout = () => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
 
   const handleResize = () => {
     setSwidth(window.innerWidth);

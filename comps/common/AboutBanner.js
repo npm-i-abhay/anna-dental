@@ -15,7 +15,7 @@ export const AboutBanner = ({
     In my free time, you can find me at a golf course (ask me about the Dental Golf Tournament I host
     every year), at spin-class, and eating good food with good company.`,
 }) => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
 
   const handleResize = () => {
     setSwidth(window.innerWidth);

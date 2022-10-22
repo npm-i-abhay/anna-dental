@@ -4,7 +4,7 @@ import { Container } from "../common/Container";
 import { useRouter } from "next/router";
 import { MarketingIcons } from "./MarketingIcons";
 export const SubBanner = ({ subImageSrc = "", productCopy }) => {
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
   const theme = useTheme();
   const handleResize = () => {
     setSwidth(window.innerWidth);

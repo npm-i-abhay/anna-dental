@@ -25,7 +25,7 @@ export const NavBar = () => {
     //   : setMobServiceDisp("none");
   };
 
-  const [sWidth, setSwidth] = useState();
+  const [sWidth, setSwidth] = useState(900);
 
   const handleResize = () => {
     setSwidth(window.innerWidth);
