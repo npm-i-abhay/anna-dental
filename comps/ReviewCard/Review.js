@@ -49,9 +49,9 @@ export const Review = ({
       justify={"space-between"}
     >
       <ReviewHeader>
-        <Avatar>
+        {/* <Avatar>
           <AvatarImg src={imgSrc} />
-        </Avatar>
+        </Avatar> */}
         <Info>
           <Reviewer>{name}</Reviewer>
           <Reviewer>{location}</Reviewer>

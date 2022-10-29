@@ -28,6 +28,9 @@ const Wrapper = styled.div`
   order: ${({ order }) => order};
   border-bottom-right-radius: ${({ borderRight }) => borderRight};
   border-top-left-radius: ${({ borderLeft }) => borderLeft};
+  flex: ${({ flex }) => flex};
+  flex-wrap: ${({ flexWrap }) => flexWrap};
+
   @media only screen and (max-width: 600px) {
     display: ${({ mobDisplay }) => mobDisplay};
     height: ${({ mobHeight }) => mobHeight};
@@ -78,6 +81,8 @@ export const Container = ({
   alignSelf,
   borderLeft,
   borderRight,
+  flex,
+  flexWrap,
 }) => {
   return (
     <Wrapper
@@ -115,6 +120,8 @@ export const Container = ({
       alignSelf={alignSelf}
       borderLeft={borderLeft}
       borderRight={borderRight}
+      flex={flex}
+      flexWrap={flexWrap}
     >
       {children}
     </Wrapper>

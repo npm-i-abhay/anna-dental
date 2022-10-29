@@ -34,6 +34,7 @@ export const Layout = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     window.innerWidth < 800 && setSwidth(500);
+    window.scroll(0, 0);
     // detecting when the screen resizes
   }, []);
 
@@ -83,7 +84,11 @@ export const Layout = () => {
           {siteReviews.map((review, index) => {
             return (
               <SwiperSlide key={index}>
-                <Review body={review.body} />
+                <Review
+                  name={review.name}
+                  location={review.location}
+                  body={review.body}
+                />
               </SwiperSlide>
             );
           })}

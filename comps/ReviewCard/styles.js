@@ -24,6 +24,8 @@ export const Avatar = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 `;
 export const Reviewer = styled.h4`
   text-align: right;
