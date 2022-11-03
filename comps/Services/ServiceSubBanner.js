@@ -7,7 +7,7 @@ import { HeroCopy, SubHeading } from "../Services/styles";
 
 export const ServiceSubBanner = ({
   productSubHead = "An Experience that Moves Patients",
-  productSubCopy = "By eliminating the primary causes of patient anxiety (the needle and the drill), Solea delivers a dental experience patients prefer. When needles, numbness, the sound of the drill, and the pain are all removed from the experience, ",
+  productSubCopy = "By eliminating the primary causes of patient anxiety (the needle and the drill), Solea delivers a dental experience patients prefer. When needles, numbness, the sound of the drill, and the pain are all removed from the experience",
 }) => {
   const [sWidth, setSwidth] = useState(900);
   const handleResize = () => {

@@ -6,8 +6,9 @@ export const servicesData = {
     subImageSrc: "/services/soleaSubBanner.jpg",
     productCopy:
       "Solea® is a breakthrough technology that enables virtually every cavity prep to be performed anesthesia-free, delivering a dental experience patients prefer. Solea also enables soft tissue procedures that are blood-free and suture-free with minimal post-op discomfort and remarkably rapid healing.",
-    productSubHead: "",
-    productSubCopy: "",
+    productSubHead: "An Experience that Moves Patients",
+    productSubCopy:
+      "By eliminating the primary causes of patient anxiety (the needle and the drill), Solea delivers a dental experience patients prefer. When needles, numbness, the sound of the drill, and the pain are all removed from the experience.",
     iconCopyOne: `By eliminating the primary causes of patient anxiety (the needle and the drill), Solea
     delivers a dental experience patients prefer. When needles, numbness, and the sound of
     the drill, and the pain are all removed from a patient’s dental experience, two important
@@ -56,7 +57,7 @@ export const servicesData = {
     productName: "Let’s map out the details of your vision",
     logoImgSrc: "/services/pattersonLogo.png",
     productImgSrc: "/services/newOffice.jpeg",
-    subImageSrc: "/services/serviceNewOfficeAnna.jpg",
+    subImageSrc: "/services/serviceAnnaNewOffice.jpg",
     productCopy: `Remodeling? Building new? Looking to expand? There’s much to know and consider. Our comprehensive approach on every project, from a single operatory update to new builds, will set your mind at ease. Count on our expertise to guide you through intricacies such as office layout, technical requirements and operational best practices.
 
     We’re committed to finding the right solutions and supporting you every step of the way – through planning, design, installation & implementation and support – so that you can feel confident in your practice investment. `,

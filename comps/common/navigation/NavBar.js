@@ -262,16 +262,27 @@ export const NavBar = () => {
                 {serviceDropDown > 0 && (
                   <>
                     <Link href={"/service/solea"} passHref>
-                      <MenuLink>Solea</MenuLink>
+                      <MenuLink onClick={() => setServiceDropDown(0)}>
+                        Solea
+                      </MenuLink>
                     </Link>
                     <Link href={"/service/cerec"} passHref>
-                      <MenuLink> Cerec </MenuLink>
+                      <MenuLink onClick={() => setServiceDropDown(0)}>
+                        {" "}
+                        Cerec{" "}
+                      </MenuLink>
                     </Link>
                     <Link href={"/service/new-office"} passHref>
-                      <MenuLink> New Office </MenuLink>
+                      <MenuLink onClick={() => setServiceDropDown(0)}>
+                        {" "}
+                        New Office{" "}
+                      </MenuLink>
                     </Link>
                     <Link href={"/service/sundries"} passHref>
-                      <MenuLink> Sundries</MenuLink>
+                      <MenuLink onClick={() => setServiceDropDown(0)}>
+                        {" "}
+                        Sundries
+                      </MenuLink>
                     </Link>
                   </>
                 )}
