@@ -66,12 +66,6 @@ export const siteReviews = [
   },
   {
     imgSrc: "/services/serviceSolea.png",
-    name: "Solea",
-    location: "Vancouver Dental",
-    body: "Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum.",
-  },
-  {
-    imgSrc: "/services/serviceSolea.png",
     name: "Dr. J Galpin",
     location: "Burrard Dental Care",
     body: `Anna has been one of my most valuable go-to contacts for merchandise and equipment. As

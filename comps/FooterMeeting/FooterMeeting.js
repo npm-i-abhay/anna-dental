@@ -63,10 +63,18 @@ export const FooterMeeting = ({ info = "blah blah" }) => {
           <LogoImg src="/services/pattersonLogo.png" />
         </Logo>
         <SocialIconCont>
-          <ImInstagram size={32} />
-          <ImFacebook2 size={32} />
-          <ImLinkedin size={32} />
-          <AiOutlineGlobal size={32} />
+          <a
+            href="https://www.instagram.com/anna.pattersondental/"
+            target="_blank"
+          >
+            <ImInstagram size={32} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anna-li-686161178/"
+            target="_blank"
+          >
+            <ImLinkedin size={32} />
+          </a>
         </SocialIconCont>
       </FooterInfo>
 
